@@ -27,11 +27,13 @@ package org.spongepowered.api.entity.living.monster;
 
 import org.spongepowered.api.entity.ArmorEquipable;
 import org.spongepowered.api.entity.living.Ageable;
+import org.spongepowered.api.item.inventory.Carrier;
+import org.spongepowered.api.item.inventory.EquipmentInventory;
 
 /**
  * Represents a Zombie.
  */
-public interface Zombie extends Monster, ArmorEquipable, Ageable {
+public interface Zombie extends Monster, ArmorEquipable, Ageable, Carrier {
 
     /**
      * Gets if this Zombie is a villager Zombie.
@@ -46,4 +48,7 @@ public interface Zombie extends Monster, ArmorEquipable, Ageable {
      * @param villagerZombie If the Zombie should be a villager Zombie
      */
     void setVillagerZombie(boolean villagerZombie);
+
+    EquipmentInventory<Zombie> getInventory();
+
 }

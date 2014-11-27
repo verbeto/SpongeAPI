@@ -22,23 +22,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.item.list;
 
-package org.spongepowered.api.event.entity;
-
-import java.util.Collection;
-
-import org.spongepowered.api.util.event.Cancellable;
+import org.spongepowered.api.item.ItemList;
 import org.spongepowered.api.item.ItemStack;
+import org.spongepowered.api.math.Vector2i;
 
-/**
- * Called when a player drops an item stack.
- */
-public interface EntityDropItemEvent extends EntityEvent, Cancellable {
+public interface ItemGrid extends ItemList {
 
-    /**
-     * Gets the items that the player is dropping.
-     * 
-     * @return The dropped stacks
-     */
-    Collection<ItemStack> getDroppedStacks();
+    int getWidth();
+    int getHeight();
+
+    Vector2i getDimensions();
+
+    void setItem(Vector2i pos, ItemStack stack);
+    void setItem(int x, int y, ItemStack stack);
+
+    ItemStack getItem(Vector2i pos);
+    ItemStack getItem(int x, int y);
+
+    ItemStack splitItem(int x, int y, int count);
+    ItemStack splitItem(Vector2i pos);
+
+    int getIndex(Vector2i pos);
+    int getIndex(int x, int y);
+
+    Vector2i getPosition(int index);
+
 }

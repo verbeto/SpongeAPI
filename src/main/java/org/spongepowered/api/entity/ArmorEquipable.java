@@ -26,7 +26,7 @@ package org.spongepowered.api.entity;
  */
 
 import com.google.common.base.Optional;
-import org.spongepowered.api.item.inventory.ItemStack;
+import org.spongepowered.api.item.ItemStack;
 import org.spongepowered.api.util.Identifiable;
 
 import javax.annotation.Nullable;

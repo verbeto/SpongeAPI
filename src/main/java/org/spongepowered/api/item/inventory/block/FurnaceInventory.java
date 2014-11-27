@@ -22,23 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.item.inventory.block;
 
-package org.spongepowered.api.event.entity;
+import org.spongepowered.api.item.inventory.block.BlockInventory;
+import org.spongepowered.api.item.list.ItemSingle;
 
-import java.util.Collection;
+public interface FurnaceInventory extends BlockInventory {
 
-import org.spongepowered.api.util.event.Cancellable;
-import org.spongepowered.api.item.ItemStack;
+    ItemSingle getSmelting();
+    ItemSingle getFuel();
+    ItemSingle getResult();
 
-/**
- * Called when a player drops an item stack.
- */
-public interface EntityDropItemEvent extends EntityEvent, Cancellable {
-
-    /**
-     * Gets the items that the player is dropping.
-     * 
-     * @return The dropped stacks
-     */
-    Collection<ItemStack> getDroppedStacks();
 }

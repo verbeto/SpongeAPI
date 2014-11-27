@@ -22,63 +22,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.action;
+package org.spongepowered.api.item.inventory;
 
-import org.spongepowered.api.entity.Entity;
-import org.spongepowered.api.item.ItemStack;
+import org.spongepowered.api.entity.living.Human;
+import org.spongepowered.api.item.ItemList;
 import org.spongepowered.api.text.message.Message;
 
-import java.net.URL;
+import java.util.Set;
 
-/**
- * Dummy implementation of {@link TextActionFactory} - returns null for all
- * methods.
- */
-class NullTextActionFactory implements TextActionFactory {
+public interface Inventory extends ItemList {
 
-    @Override
-    public ClickAction.OpenUrl createOpenUrl(URL url) {
-        return null;
-    }
+    Message<?> getTitle();
+    void setTitle(Message<?> title);
 
-    @Override
-    public ClickAction.RunCommand createRunCommand(String command) {
-        return null;
-    }
+    Set<Human> getViewers();
 
-    @Override
-    public ClickAction.ChangePage createChangePage(int page) {
-        return null;
-    }
+    void open(Human viewer);
+    void close(Human viewer);
 
-    @Override
-    public ClickAction.SuggestCommand createSuggestCommand(String command) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowText createShowText(Message<?> text) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowItem createShowItem(ItemStack item) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowAchievement createShowAchievement(Object achievement) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowEntity createShowEntity(Entity entity) {
-        return null;
-    }
-
-    @Override
-    public ShiftClickAction.InsertText createInsertText(String text) {
-        return null;
-    }
+    Carrier getCarrier();
 
 }

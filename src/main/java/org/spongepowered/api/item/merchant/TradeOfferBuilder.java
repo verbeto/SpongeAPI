@@ -24,7 +24,7 @@
  */
 package org.spongepowered.api.item.merchant;
 
-import org.spongepowered.api.item.inventory.ItemStack;
+import org.spongepowered.api.item.ItemStack;
 
 /**
  * Represents a builder to generate immutable {@link TradeOffer}s.

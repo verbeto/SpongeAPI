@@ -22,23 +22,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-package org.spongepowered.api.event.entity;
+package org.spongepowered.api.item;
 
 import java.util.Collection;
 
-import org.spongepowered.api.util.event.Cancellable;
-import org.spongepowered.api.item.ItemStack;
+public interface ItemList extends Iterable<ItemStack> {
 
-/**
- * Called when a player drops an item stack.
- */
-public interface EntityDropItemEvent extends EntityEvent, Cancellable {
+    int getSize();
 
-    /**
-     * Gets the items that the player is dropping.
-     * 
-     * @return The dropped stacks
-     */
-    Collection<ItemStack> getDroppedStacks();
+    boolean isEmpty();
+
+    boolean contains(ItemStack stack);
+
+    boolean contains(ItemType type);
+
+    public int getMaxStackSize();
+
+    public void setMaxStackSize(int size);
+
+    ItemStack getItem(int index);
+
+    void setItem(int index, ItemStack stack);
+    void clear(int index);
+
+    ItemStack splitItem(int index, int count);
+
+    Collection<ItemStack> getContents();
+
 }

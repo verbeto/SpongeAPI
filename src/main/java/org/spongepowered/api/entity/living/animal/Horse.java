@@ -30,14 +30,16 @@ import org.spongepowered.api.entity.living.Tameable;
 import org.spongepowered.api.entity.living.meta.HorseColor;
 import org.spongepowered.api.entity.living.meta.HorseStyle;
 import org.spongepowered.api.entity.living.meta.HorseVariant;
-import org.spongepowered.api.item.inventory.ItemStack;
+import org.spongepowered.api.item.ItemStack;
+import org.spongepowered.api.item.inventory.Carrier;
+import org.spongepowered.api.item.inventory.entity.HorseInventory;
 
 import javax.annotation.Nullable;
 
 /**
  * Represents a Horse.
  */
-public interface Horse extends Animal, Tameable {
+public interface Horse extends Animal, Tameable, Carrier {
 
     /**
      * Gets the current style of this Horse.
@@ -102,5 +104,7 @@ public interface Horse extends Animal, Tameable {
      * @param itemStack The saddle item
      */
     void setSaddle(@Nullable ItemStack itemStack);
+
+    HorseInventory getInventory();
 
 }

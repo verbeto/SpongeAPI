@@ -25,12 +25,14 @@
 package org.spongepowered.api.entity.living;
 
 import org.spongepowered.api.entity.ArmorEquipable;
+import org.spongepowered.api.item.inventory.Carrier;
+import org.spongepowered.api.item.inventory.EquipmentInventory;
 import org.spongepowered.api.math.EulerDirection;
 
 /**
  * Represents an armor stand.
  */
-public interface ArmorStand extends Living, ArmorEquipable {
+public interface ArmorStand extends Living, ArmorEquipable, Carrier {
 
     /**
      * Gets the direction the headpiece is aiming at.
@@ -174,4 +176,7 @@ public interface ArmorStand extends Living, ArmorEquipable {
      * @param baseplate Whether this armor stand is to have a base plate
      */
     void setHasBasePlate(boolean baseplate);
+
+    EquipmentInventory<ArmorStand> getInventory();
+
 }

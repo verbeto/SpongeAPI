@@ -23,9 +23,7 @@
  * THE SOFTWARE.
  */
 
-package org.spongepowered.api.item.inventory;
-
-import org.spongepowered.api.item.ItemType;
+package org.spongepowered.api.item;
 
 import java.io.Serializable;
 

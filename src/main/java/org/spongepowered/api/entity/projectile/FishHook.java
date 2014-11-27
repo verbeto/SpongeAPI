@@ -25,7 +25,7 @@
 package org.spongepowered.api.entity.projectile;
 
 import com.google.common.base.Optional;
-import org.spongepowered.api.item.inventory.ItemStack;
+import org.spongepowered.api.item.ItemStack;
 
 import javax.annotation.Nullable;
 

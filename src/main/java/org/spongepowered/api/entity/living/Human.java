@@ -25,12 +25,17 @@
 
 package org.spongepowered.api.entity.living;
 
+import org.spongepowered.api.entity.ArmorEquipable;
 import org.spongepowered.api.entity.projectile.source.ProjectileSource;
+import org.spongepowered.api.item.inventory.Carrier;
+import org.spongepowered.api.item.inventory.EquipmentInventory;
+import org.spongepowered.api.item.inventory.Inventory;
+import org.spongepowered.api.item.inventory.entity.HumanInventory;
 
 /**
  * Represents a HumanEntity in game, such as {@link org.spongepowered.api.entity.player.Player}
  */
-public interface Human extends Agent, ProjectileSource {
+public interface Human extends Agent, ArmorEquipable, ProjectileSource, Carrier {
 
     /**
      * Gets the hunger value of this human entity.
@@ -78,12 +83,10 @@ public interface Human extends Agent, ProjectileSource {
      */
     boolean isViewingInventory();
 
-    // TODO inventory api
-    /*
-    Container getOpenInventory();
+    HumanInventory getInventory();
+
+    Inventory getOpenInventory();
 
     void closeInventory();
-
-     */
 
 }

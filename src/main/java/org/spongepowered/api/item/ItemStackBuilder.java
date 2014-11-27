@@ -22,9 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item.inventory;
-
-import org.spongepowered.api.item.ItemType;
+package org.spongepowered.api.item;
 
 /**
  * Represents a builder interface to create an {@link ItemStack}.

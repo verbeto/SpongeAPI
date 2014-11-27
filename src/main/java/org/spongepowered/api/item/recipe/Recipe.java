@@ -22,23 +22,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.item.recipe;
 
-package org.spongepowered.api.event.entity;
-
-import java.util.Collection;
-
-import org.spongepowered.api.util.event.Cancellable;
+import org.spongepowered.api.item.list.ItemGrid;
 import org.spongepowered.api.item.ItemStack;
+import org.spongepowered.api.item.ItemType;
 
-/**
- * Called when a player drops an item stack.
- */
-public interface EntityDropItemEvent extends EntityEvent, Cancellable {
+public interface Recipe {
 
-    /**
-     * Gets the items that the player is dropping.
-     * 
-     * @return The dropped stacks
-     */
-    Collection<ItemStack> getDroppedStacks();
+    ItemType getResultType();
+
+    boolean isValid(ItemGrid grid);
+
+    ItemStack getResult(ItemGrid grid);
+
 }

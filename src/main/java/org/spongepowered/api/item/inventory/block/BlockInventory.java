@@ -22,23 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.item.inventory.block;
 
-package org.spongepowered.api.event.entity;
+import org.spongepowered.api.block.Block;
+import org.spongepowered.api.item.inventory.Inventory;
 
-import java.util.Collection;
+public interface BlockInventory extends Inventory {
 
-import org.spongepowered.api.util.event.Cancellable;
-import org.spongepowered.api.item.ItemStack;
+    // TODO specific block classes with block nbt data API
 
-/**
- * Called when a player drops an item stack.
- */
-public interface EntityDropItemEvent extends EntityEvent, Cancellable {
-
-    /**
-     * Gets the items that the player is dropping.
-     * 
-     * @return The dropped stacks
-     */
-    Collection<ItemStack> getDroppedStacks();
 }

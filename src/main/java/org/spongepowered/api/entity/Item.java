@@ -25,7 +25,7 @@
 
 package org.spongepowered.api.entity;
 
-import org.spongepowered.api.item.inventory.ItemStack;
+import org.spongepowered.api.item.ItemStack;
 
 /**
  * Represents an Item entity.

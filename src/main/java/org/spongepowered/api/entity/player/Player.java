@@ -47,7 +47,7 @@ public interface Player extends Human, User, CommandSource {
     /**
      * Gets the player's display name. If none set, returns their current
      * username.
-     * 
+     *
      * @return The player's display name
      */
     String getDisplayName();
@@ -78,7 +78,7 @@ public interface Player extends Human, User, CommandSource {
      * Sends the plain text message(s) with the specified {@link ChatType} on the client.
      * <p>Use {@link #sendMessage(ChatType, Message...)} for a formatted message.</p>
      *
-     * @param type The chat type to send the messages to
+     * @param type    The chat type to send the messages to
      * @param message The message(s) to send
      */
     void sendMessage(ChatType type, String... message);
@@ -86,7 +86,7 @@ public interface Player extends Human, User, CommandSource {
     /**
      * Sends the message(s) with the specified {@link ChatType} on the client.
      *
-     * @param type The chat type to send the messages to
+     * @param type     The chat type to send the messages to
      * @param messages The message(s) to send
      */
     void sendMessage(ChatType type, Message<?>... messages);
@@ -94,7 +94,7 @@ public interface Player extends Human, User, CommandSource {
     /**
      * Sends the message(s) with the specified {@link ChatType} on the client.
      *
-     * @param type The chat type to send the messages to
+     * @param type     The chat type to send the messages to
      * @param messages The message(s) to send
      */
     void sendMessage(ChatType type, Iterable<Message<?>> messages);

@@ -22,23 +22,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.item.inventory;
 
-package org.spongepowered.api.event.entity;
-
-import java.util.Collection;
-
-import org.spongepowered.api.util.event.Cancellable;
 import org.spongepowered.api.item.ItemStack;
+import org.spongepowered.api.util.Direction;
 
-/**
- * Called when a player drops an item stack.
- */
-public interface EntityDropItemEvent extends EntityEvent, Cancellable {
+import java.util.Set;
 
-    /**
-     * Gets the items that the player is dropping.
-     * 
-     * @return The dropped stacks
-     */
-    Collection<ItemStack> getDroppedStacks();
+public interface SidedInventory extends Inventory {
+
+    Set<Integer> getSlotsForFace(Direction direction);
+
+    boolean canInsertItem(int index, ItemStack itemStack, Direction direction);
+
+    boolean canExtractItem(int index, ItemStack itemStack, Direction direction);
+
 }
