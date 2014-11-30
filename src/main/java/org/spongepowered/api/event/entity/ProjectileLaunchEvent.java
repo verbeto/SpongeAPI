@@ -22,40 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.format;
 
-import com.google.common.base.Optional;
+package org.spongepowered.api.event.entity;
 
-import java.util.List;
+import org.spongepowered.api.entity.projectile.Projectile;
+import org.spongepowered.api.event.cause.CauseTracked;
 
 /**
- * Dummy implementation of {@link TextFormatFactory} - returns null for all
- * methods.
+ * Called when a {@link Projectile} is launched.
  */
-class NullTextFormatFactory implements TextFormatFactory {
+public interface ProjectileLaunchEvent extends EntityEvent, CauseTracked {
 
-    @Override
-    public Optional<TextColor> getColorFromName(String name) {
-        return null;
-    }
-
-    @Override
-    public List<TextColor> getColors() {
-        return null;
-    }
-
-    @Override
-    public Optional<TextStyle> getStyleFromName(String name) {
-        return null;
-    }
-
-    @Override
-    public List<TextStyle> getStyles() {
-        return null;
-    }
-
-    @Override
-    public TextStyle createStyle(TextStyle[] styles) {
-        return null;
-    }
 }

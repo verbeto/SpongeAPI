@@ -30,8 +30,11 @@ import org.spongepowered.api.item.ItemStack;
 import org.spongepowered.api.math.EulerDirection;
 import org.spongepowered.api.math.Vector3d;
 import org.spongepowered.api.math.Vector3f;
+import org.spongepowered.api.util.DataHolder;
 import org.spongepowered.api.util.Identifiable;
+import org.spongepowered.api.world.Location;
 import org.spongepowered.api.world.World;
+import org.spongepowered.api.world.extent.Extent;
 
 import javax.annotation.Nullable;
 
@@ -51,7 +54,7 @@ import javax.annotation.Nullable;
  *
  * <p>Blocks and items (when they are in inventories) are not entities.</p>
  */
-public interface Entity extends Identifiable, EntityState {
+public interface Entity extends Identifiable, EntityState, DataHolder {
 
     /**
      * Mark this entity for removal in the very near future, preferably
@@ -81,6 +84,28 @@ public interface Entity extends Identifiable, EntityState {
      * @return Whether this entity is on the ground or not
      */
     boolean isOnGround();
+
+    /**
+     * Get the location of this entity.
+     *
+     * @return The location
+     */
+    Location getLocation();
+
+    /**
+     * Teleport the entity to a location.
+     *
+     * @param location The location
+     */
+    void teleport(Location location);
+
+    /**
+     * Teleport the entity to a location.
+     *
+     * @param extent The new extent
+     * @param position The new position
+     */
+    void teleport(Extent extent, Vector3d position);
 
     /**
      * Gets the position.

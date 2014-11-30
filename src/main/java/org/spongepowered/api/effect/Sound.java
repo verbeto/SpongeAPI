@@ -22,26 +22,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.chat;
-
-import com.google.common.base.Optional;
-
-import java.util.List;
+package org.spongepowered.api.effect;
 
 /**
- * Dummy implementation of {@link ChatTypeFactory} - returns null for all
- * methods.
+ * Represents a sound that can be heard on clients.
  */
-class NullChatTypeFactory implements ChatTypeFactory {
+public interface Sound {
 
-    @Override
-    public Optional<ChatType> getTypeFromName(String name) {
-        return null;
-    }
-
-    @Override
-    public List<ChatType> getTypes() {
-        return null;
-    }
+    /**
+     * Gets the sounds name.
+     *
+     * @return The name of this sound
+     */
+    String getName();
 
 }

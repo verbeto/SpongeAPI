@@ -22,31 +22,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.translation.locale;
-
-import com.google.common.base.Optional;
-
-import java.util.List;
-import java.util.Locale;
+package org.spongepowered.api.util.rotation;
 
 /**
- * Dummy implementation of {@link LocaleFactory} - returns null for all methods.
+ * Represents an angle of rotation
  */
-class NullLocaleFactory implements LocaleFactory {
+public interface Rotation {
 
-    @Override
-    public Optional<Locale> getLocaleFromId(String id) {
-        return null;
-    }
-
-    @Override
-    public Optional<Locale> getLocaleFromName(String name) {
-        return null;
-    }
-
-    @Override
-    public List<Locale> getLocales() {
-        return null;
-    }
+    /**
+     * The angle in degrees.
+     *
+     * @return The angle in degrees
+     */
+    //TODO we should have an Angle class in the future
+    int getAngle();
 
 }

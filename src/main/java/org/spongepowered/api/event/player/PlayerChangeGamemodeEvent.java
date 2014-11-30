@@ -23,19 +23,35 @@
  * THE SOFTWARE.
  */
 
-package org.spongepowered.api.util;
+package org.spongepowered.api.event.player;
+
+import org.spongepowered.api.entity.player.Player;
+import org.spongepowered.api.entity.player.gamemode.GameMode;
+import org.spongepowered.api.util.event.Cancellable;
 
 /**
- * An owner may own registrations (of services, et al.).
+ * Called when a {@link Player} changes {@link GameMode}.
  */
-public interface Owner {
+public interface PlayerChangeGamemodeEvent extends PlayerEvent, Cancellable {
 
     /**
-     * An ID for the owner to be used internally. The ID should be unique as to
-     * not conflict with other owners.
+     * Gets the old {@link GameMode} of the player.
      *
-     * @return A unique identifier
+     * @return The old {@link GameMode}.
      */
-    String getId();
+    GameMode getOldGameMode();
 
+    /**
+     * Gets the new {@link GameMode} of the player.
+     *
+     * @return The new {@link GameMode}.
+     */
+    GameMode getNewGameMode();
+
+    /**
+     * Sets the new {@link GameMode} of the player.
+     *
+     * @param newGameMode The new {@link GameMode} value.
+     */
+    void setNewGameMode(GameMode newGameMode);
 }

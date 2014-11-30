@@ -22,19 +22,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.translation;
 
-import com.google.common.base.Optional;
+package org.spongepowered.api.event.weather;
+
+import org.spongepowered.api.event.world.WorldEvent;
 
 /**
- * Dummy implementation of {@link TranslationFactory} - returns null for all
- * methods.
+ * Called when a weather-related activity happens.
  */
-class NullTranslationFactory implements TranslationFactory {
-
-    @Override
-    public Optional<Translation> getTranslationFromId(String id) {
-        return null;
-    }
+public interface WeatherEvent extends WorldEvent {
 
 }

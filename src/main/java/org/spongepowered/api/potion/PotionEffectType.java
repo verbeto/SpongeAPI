@@ -22,49 +22,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.message;
 
-import org.spongepowered.api.text.translation.Translation;
+package org.spongepowered.api.potion;
 
 /**
- * Dummy implementation of {@link MessageFactory} - returns null for all
- * methods.
+ * Represents a possible type of {@link PotionEffect}.
  */
-class NullMessageFactory implements MessageFactory {
+public interface PotionEffectType {
 
-    @Override
-    public <T> MessageBuilder<T> createBuilder(T content) {
-        return null;
-    }
-
-    @Override
-    public MessageBuilder<Translation> createTranslationBuilder(Translation t, Object[] args) {
-        return null;
-    }
-
-    @Override
-    public MessageBuilder<Object> createScoreBuilder(Object score, String override) {
-        return null;
-    }
-
-    @Override
-    public char getColorChar() {
-        return 0;
-    }
-
-    @Override
-    public Message.Text parseLegacyMessage(String message, char color) {
-        return null;
-    }
-
-    @Override
-    public String stripLegacyCodes(String message, char color) {
-        return null;
-    }
-
-    @Override
-    public String replaceLegacyCodes(String message, char from, char to) {
-        return null;
-    }
-
+    /**
+     * Gets whether this potion effect is applied
+     * instantly or over time.
+     *
+     * @return If applied instantly.
+     */
+    boolean isInstant();
 }

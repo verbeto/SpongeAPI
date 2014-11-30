@@ -39,4 +39,5 @@ public interface EntityMountEvent extends EntityEvent, Cancellable {
      * @return The entity that is being mounted
      */
     Entity getMounted();
+
 }

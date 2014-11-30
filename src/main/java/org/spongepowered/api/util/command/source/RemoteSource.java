@@ -22,16 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.title;
+package org.spongepowered.api.util.command.source;
+
+import org.spongepowered.api.util.command.CommandSource;
 
 /**
- * Dummy implementation of {@link TitleFactory} - returns null for all methods.
+ * Represents a remote source, such as RCON, web-app, etc.
  */
-class NullTitleFactory implements TitleFactory {
-
-    @Override
-    public TitleBuilder createTitleBuilder() {
-        return null;
-    }
+public interface RemoteSource extends CommandSource {
 
 }

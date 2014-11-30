@@ -22,63 +22,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.text.action;
+package org.spongepowered.api.util.rotation;
 
-import org.spongepowered.api.entity.Entity;
-import org.spongepowered.api.item.ItemStack;
-import org.spongepowered.api.text.message.Message;
+import com.google.common.base.Optional;
 
-import java.net.URL;
+import java.util.List;
 
 /**
- * Dummy implementation of {@link TextActionFactory} - returns null for all
- * methods.
+ * An enumeration of possible rotations for something that can rotate,
+ * such as an {@link org.spongepowered.api.item.inventory.ItemStack} within
+ * an {@link org.spongepowered.api.entity.hanging.ItemFrame}.
  */
-class NullTextActionFactory implements TextActionFactory {
+public final class Rotations {
+    private Rotations() {
+    }
 
-    @Override
-    public ClickAction.OpenUrl createOpenUrl(URL url) {
+    public static final Rotation TOP = null;
+    public static final Rotation TOP_RIGHT = null;
+    public static final Rotation RIGHT = null;
+    public static final Rotation BOTTOM_RIGHT = null;
+    public static final Rotation BOTTOM = null;
+    public static final Rotation BOTTOM_LEFT = null;
+    public static final Rotation LEFT = null;
+    public static final Rotation TOP_LEFT = null;
+
+    public static List<Rotation> getValues() {
         return null;
     }
 
-    @Override
-    public ClickAction.RunCommand createRunCommand(String command) {
-        return null;
-    }
-
-    @Override
-    public ClickAction.ChangePage createChangePage(int page) {
-        return null;
-    }
-
-    @Override
-    public ClickAction.SuggestCommand createSuggestCommand(String command) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowText createShowText(Message<?> text) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowItem createShowItem(ItemStack item) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowAchievement createShowAchievement(Object achievement) {
-        return null;
-    }
-
-    @Override
-    public HoverAction.ShowEntity createShowEntity(Entity entity) {
-        return null;
-    }
-
-    @Override
-    public ShiftClickAction.InsertText createInsertText(String text) {
-        return null;
+    public static Optional<Rotation> getRotationForDegree(int degrees) {
+        return Optional.absent();
     }
 
 }

@@ -25,56 +25,12 @@
 
 package org.spongepowered.api.event.entity;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
-import com.google.common.base.Predicate;
-import org.spongepowered.api.Game;
 import org.spongepowered.api.entity.Entity;
-
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import org.spongepowered.api.event.cause.CauseTracked;
 
 /**
- * An abstract implementation of entity events.
+ * Called when an {@link Entity} teleports.
  */
-public abstract class AbstractEventEntity implements EntityEvent {
-
-    private final Game game;
-    private final List<Entity> entities;
-
-    /**
-     * Create a new instance.
-     *
-     * @param game The game
-     * @param entities A list of entities
-     */
-    public AbstractEventEntity(Game game, List<Entity> entities) {
-        checkNotNull(game);
-        checkNotNull(entities);
-        this.game = game;
-        this.entities = entities;
-    }
-
-    @Override
-    public Game getGame() {
-        return game;
-    }
-
-    @Override
-    public List<Entity> getEntities() {
-        return isCancellable() ? entities : Collections.unmodifiableList(entities);
-    }
-
-    @Override
-    public void filter(Predicate<Entity> predicate) {
-        Iterator<Entity> it = entities.iterator();
-        boolean canRemove = isCancellable();
-        while (it.hasNext()) {
-            if (!predicate.apply(it.next()) && canRemove) {
-                it.remove();
-            }
-        }
-    }
+public interface EntityTeleportEvent extends EntityMoveEvent, CauseTracked {
 
 }
