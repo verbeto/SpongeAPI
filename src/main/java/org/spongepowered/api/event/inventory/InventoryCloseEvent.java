@@ -22,38 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item.inventory;
+package org.spongepowered.api.event.inventory;
 
-import com.google.common.base.Optional;
-import org.spongepowered.api.item.list.ItemGrid;
-
-import org.spongepowered.api.item.list.ItemSingle;
-import org.spongepowered.api.item.recipe.Recipe;
+import org.spongepowered.api.util.event.Cancellable;
 
 /**
- * A CraftingInventory represents the inventory of something that can craft items.
+ * Fired when a viewer closes an inventory.
  */
-public interface CraftingInventory extends Inventory {
-
-    /**
-     * Gets the crafting matrix of this CraftingInventory.
-     *
-     * @return The crafting matrix
-     */
-    ItemGrid getMatrix();
-
-    /**
-     * Gets the result slot of this CraftingInventory.
-     *
-     * @return The result slot
-     */
-    ItemSingle getResult();
-
-    /**
-     * Retrieves the recipe formed by this CraftingInventory, if any.
-     *
-     * @return The recipe or {@link Optional#absent()} if no recipe is formed
-     */
-    Optional<Recipe> getRecipe();
+public interface InventoryCloseEvent extends ViewerEvent, Cancellable {
 
 }

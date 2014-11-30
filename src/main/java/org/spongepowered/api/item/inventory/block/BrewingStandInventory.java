@@ -30,6 +30,6 @@ import org.spongepowered.api.item.inventory.SidedInventory;
 /**
  * Represents the inventory of a Brewing Stand.
  */
-public interface BrewingStandInventory extends Inventory, SidedInventory {
+public interface BrewingStandInventory extends BlockInventory, SidedInventory {
 
 }

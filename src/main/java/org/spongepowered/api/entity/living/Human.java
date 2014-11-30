@@ -99,6 +99,13 @@ public interface Human extends Agent, ArmorEquipable, ProjectileSource {
     Optional<Inventory> getOpenInventory();
 
     /**
+     * Opens the given Inventory for the player to view.
+     *
+     * @param inventory The inventory to view
+     */
+    void openInventory(Inventory inventory);
+
+    /**
      * Closes the currently viewed entity of this human entity, if it is
      * currently viewing one.
      */

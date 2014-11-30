@@ -24,10 +24,12 @@
  */
 package org.spongepowered.api.item.inventory;
 
+import org.spongepowered.api.util.Identifiable;
+
 /**
  * A CustomInventory is an inventory that has no backing in the world that is
  * created by plugins.
  */
-public interface CustomInventory extends Inventory {
+public interface CustomInventory extends Inventory, Identifiable {
 
 }

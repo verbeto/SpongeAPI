@@ -67,6 +67,13 @@ public interface Inventory extends ItemList {
     Set<Human> getViewers();
 
     /**
+     * Checks for whether this Inventory currently has viewers.
+     *
+     * @return True if viewers are currently looking at this inventory
+     */
+    boolean hasViewers();
+
+    /**
      * Shows this Inventory to the given viewer.
      *
      * @param viewer The viewer to show this inventory to

@@ -24,36 +24,35 @@
  */
 package org.spongepowered.api.item.inventory;
 
-import com.google.common.base.Optional;
-import org.spongepowered.api.item.list.ItemGrid;
-
-import org.spongepowered.api.item.list.ItemSingle;
-import org.spongepowered.api.item.recipe.Recipe;
+import org.spongepowered.api.text.message.Message;
 
 /**
- * A CraftingInventory represents the inventory of something that can craft items.
+ * Builds a CustomInventory instance.
  */
-public interface CraftingInventory extends Inventory {
+public interface CustomInventoryBuilder {
 
     /**
-     * Gets the crafting matrix of this CraftingInventory.
+     * Sets the title of the custom inventory, viewable by players looking
+     * at the inventory.
      *
-     * @return The crafting matrix
+     * @param title The title
      */
-    ItemGrid getMatrix();
+    void setTitle(Message<?> title);
 
     /**
-     * Gets the result slot of this CraftingInventory.
+     * Sets the size of the custom inventory.
      *
-     * @return The result slot
+     * @param size The size
      */
-    ItemSingle getResult();
+    void setSize(int size);
 
     /**
-     * Retrieves the recipe formed by this CraftingInventory, if any.
+     * Builds the inventory instance.
      *
-     * @return The recipe or {@link Optional#absent()} if no recipe is formed
+     * @return A new custom inventory
      */
-    Optional<Recipe> getRecipe();
+    CustomInventory build();
+
+    // TODO add nbt persistence methods
 
 }

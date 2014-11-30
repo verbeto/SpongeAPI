@@ -22,38 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item.inventory;
+package org.spongepowered.api.event.inventory;
 
-import com.google.common.base.Optional;
-import org.spongepowered.api.item.list.ItemGrid;
-
-import org.spongepowered.api.item.list.ItemSingle;
-import org.spongepowered.api.item.recipe.Recipe;
+import org.spongepowered.api.event.block.BlockEvent;
+import org.spongepowered.api.item.inventory.block.BlockInventory;
 
 /**
- * A CraftingInventory represents the inventory of something that can craft items.
+ * Represents an InventoryEvent that involves a Block as a carrier.
  */
-public interface CraftingInventory extends Inventory {
+public interface BlockInventoryEvent extends InventoryEvent, BlockEvent {
 
     /**
-     * Gets the crafting matrix of this CraftingInventory.
+     * Retrieves the BlockInventory involved in this event.
      *
-     * @return The crafting matrix
+     * @return The block inventory
      */
-    ItemGrid getMatrix();
-
-    /**
-     * Gets the result slot of this CraftingInventory.
-     *
-     * @return The result slot
-     */
-    ItemSingle getResult();
-
-    /**
-     * Retrieves the recipe formed by this CraftingInventory, if any.
-     *
-     * @return The recipe or {@link Optional#absent()} if no recipe is formed
-     */
-    Optional<Recipe> getRecipe();
+    BlockInventory getInventory();
 
 }

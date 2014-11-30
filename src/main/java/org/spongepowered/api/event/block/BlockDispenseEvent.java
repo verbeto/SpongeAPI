@@ -25,7 +25,7 @@
 
 package org.spongepowered.api.event.block;
 
-import org.spongepowered.api.item.inventory.ItemStack;
+import org.spongepowered.api.item.ItemStack;
 import org.spongepowered.api.math.Vector3d;
 
 /**
