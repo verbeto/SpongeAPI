@@ -23,41 +23,5 @@
  * THE SOFTWARE.
  */
 
-package org.spongepowered.api.entity.living.monster;
-
-import org.spongepowered.api.entity.ArmorEquipable;
-import org.spongepowered.api.entity.living.meta.SkeletonType;
-import org.spongepowered.api.entity.projectile.source.ProjectileSource;
-import org.spongepowered.api.item.inventory.EquipmentInventory;
-
-/**
- * Represents a Skeleton.
- */
-public interface Skeleton extends Monster, ArmorEquipable, ProjectileSource {
-
-    /**
-     * Gets the current skeleton type for this skeleton.
-     * <p>A Skeleton type may change the rendering to a client and also
-     * introduce a change in the items this skeleton can pick up and equip.</p>
-     *
-     * @return The current skeleton type
-     */
-    SkeletonType getSkeletonType();
-
-    /**
-     * Sets the new skeleton type for this skeleton.
-     * <p>A Skeleton type may change the rendering to a client and also
-     * introduce a change in the items this skeleton can pick up and equip.</p>
-     *
-     * @param skeletonType The new skeleton type
-     */
-    void setSkeletonType(SkeletonType skeletonType);
-
-    /**
-     * Gets the equipment inventory of this Skeleton.
-     *
-     * @return The equipment inventory
-     */
-    EquipmentInventory<Skeleton> getInventory();
-
-}
+@org.spongepowered.api.util.annotation.NonnullByDefault
+package org.spongepowered.api.item.recipe;

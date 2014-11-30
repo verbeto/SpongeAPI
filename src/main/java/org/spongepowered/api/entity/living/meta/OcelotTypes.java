@@ -29,6 +29,7 @@ import com.google.common.base.Optional;
 import java.util.List;
 
 public final class OcelotTypes {
+
     private OcelotTypes() {
     }
 

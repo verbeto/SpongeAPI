@@ -24,11 +24,11 @@
  */
 package org.spongepowered.api.entity.hanging.art;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import com.google.common.base.Optional;
 
 import java.util.List;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * A utility class for getting available {@link Art} pieces.

@@ -27,7 +27,6 @@ package org.spongepowered.api;
 
 import com.google.common.base.Optional;
 import org.spongepowered.api.block.BlockType;
-import org.spongepowered.api.item.ItemDictionary;
 import org.spongepowered.api.item.ItemType;
 import org.spongepowered.api.item.recipe.RecipeRegistry;
 
@@ -66,7 +65,7 @@ public interface GameRegistry {
      *
      * @return The item dictionary
      */
-    ItemDictionary getItemDictionary();
+    GameDictionary getGameDictionary();
 
     /**
      * Retrieves the RecipeRegistry for this GameRegistry

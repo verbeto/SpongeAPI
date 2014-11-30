@@ -22,42 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.event.inventory;
 
-package org.spongepowered.api.entity.living.monster;
-
-import org.spongepowered.api.entity.ArmorEquipable;
-import org.spongepowered.api.entity.living.meta.SkeletonType;
-import org.spongepowered.api.entity.projectile.source.ProjectileSource;
-import org.spongepowered.api.item.inventory.EquipmentInventory;
+import org.spongepowered.api.entity.living.Human;
 
 /**
- * Represents a Skeleton.
+ * A ViewerEvent is an {@link InventoryEvent} that happens with a
+ * specific viewer in a transaction.
  */
-public interface Skeleton extends Monster, ArmorEquipable, ProjectileSource {
+public interface ViewerEvent extends InventoryEvent {
 
     /**
-     * Gets the current skeleton type for this skeleton.
-     * <p>A Skeleton type may change the rendering to a client and also
-     * introduce a change in the items this skeleton can pick up and equip.</p>
+     * Retrieves the Human involved with this inventory event.
      *
-     * @return The current skeleton type
+     * @return The viewer in this event
      */
-    SkeletonType getSkeletonType();
-
-    /**
-     * Sets the new skeleton type for this skeleton.
-     * <p>A Skeleton type may change the rendering to a client and also
-     * introduce a change in the items this skeleton can pick up and equip.</p>
-     *
-     * @param skeletonType The new skeleton type
-     */
-    void setSkeletonType(SkeletonType skeletonType);
-
-    /**
-     * Gets the equipment inventory of this Skeleton.
-     *
-     * @return The equipment inventory
-     */
-    EquipmentInventory<Skeleton> getInventory();
+    Human getViewer();
 
 }

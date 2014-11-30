@@ -28,15 +28,13 @@ package org.spongepowered.api.entity.living;
 import com.google.common.base.Optional;
 import org.spongepowered.api.entity.ArmorEquipable;
 import org.spongepowered.api.entity.projectile.source.ProjectileSource;
-import org.spongepowered.api.item.inventory.Carrier;
-import org.spongepowered.api.item.inventory.EquipmentInventory;
 import org.spongepowered.api.item.inventory.Inventory;
 import org.spongepowered.api.item.inventory.entity.HumanInventory;
 
 /**
  * Represents a HumanEntity in game, such as {@link org.spongepowered.api.entity.player.Player}
  */
-public interface Human extends Agent, ArmorEquipable, ProjectileSource, Carrier {
+public interface Human extends Agent, ArmorEquipable, ProjectileSource {
 
     /**
      * Gets the hunger value of this human entity.
@@ -96,7 +94,7 @@ public interface Human extends Agent, ArmorEquipable, ProjectileSource, Carrier 
      * currently viewing one.
      *
      * @return An inventory if this human entity is viewing one, otherwise
-     *          {@link Optional#absent()}
+     * {@link Optional#absent()}
      */
     Optional<Inventory> getOpenInventory();
 

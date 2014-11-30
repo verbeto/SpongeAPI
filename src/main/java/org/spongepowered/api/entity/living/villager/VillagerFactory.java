@@ -24,8 +24,6 @@
  */
 package org.spongepowered.api.entity.living.villager;
 
-import com.google.common.base.Optional;
-
 import java.util.List;
 
 /**
@@ -80,4 +78,5 @@ interface VillagerFactory {
      * @return A list of careers
      */
     List<Career> getCareersFromProfession(Profession profession);
+
 }

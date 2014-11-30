@@ -22,42 +22,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api;
 
-package org.spongepowered.api.entity.living.monster;
+import org.spongepowered.api.item.ItemType;
 
-import org.spongepowered.api.entity.ArmorEquipable;
-import org.spongepowered.api.entity.living.meta.SkeletonType;
-import org.spongepowered.api.entity.projectile.source.ProjectileSource;
-import org.spongepowered.api.item.inventory.EquipmentInventory;
+import java.util.Map;
+import java.util.Set;
 
 /**
- * Represents a Skeleton.
+ * A GameDictionary is a store of {@link org.spongepowered.api.item.ItemTypes}.
+ *
+ * <p>Note that the GameDictionary's keys are different from Minecraft item
+ * ids. Minecraft item IDs are namespaces, e.g. minecraft:carrot while
+ * ItemDictionary keys are not, by design(e.g. carrot). This is mainly to keep
+ * supporting the existing Forge 'ore dictionary'.</p>
  */
-public interface Skeleton extends Monster, ArmorEquipable, ProjectileSource {
+public interface GameDictionary {
 
     /**
-     * Gets the current skeleton type for this skeleton.
-     * <p>A Skeleton type may change the rendering to a client and also
-     * introduce a change in the items this skeleton can pick up and equip.</p>
+     * Registers an ItemType in the dictionary with a String key.
      *
-     * @return The current skeleton type
+     * @param key The key of the item as a String
+     * @param type The item type to register
      */
-    SkeletonType getSkeletonType();
+    void register(String key, ItemType type);
 
     /**
-     * Sets the new skeleton type for this skeleton.
-     * <p>A Skeleton type may change the rendering to a client and also
-     * introduce a change in the items this skeleton can pick up and equip.</p>
+     * Retrieves the item types registered for the given key.
      *
-     * @param skeletonType The new skeleton type
+     * @param key The key of the items as a String
+     * @return The item types registered for the given key
      */
-    void setSkeletonType(SkeletonType skeletonType);
+    Set<ItemType> get(String key);
 
     /**
-     * Gets the equipment inventory of this Skeleton.
+     * Retrieves all items registered in this item dictionary, mapped by
+     * their key.
      *
-     * @return The equipment inventory
+     * @return A map of all items registered
      */
-    EquipmentInventory<Skeleton> getInventory();
+    Map<String, Set<ItemType>> getAllItems();
 
 }

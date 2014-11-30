@@ -31,7 +31,7 @@ import org.spongepowered.api.text.message.Message;
 import java.util.Set;
 
 /**
- * An Inventory is an ItemStack that can be viewed by Humans
+ * An Inventory is an ItemList that can be viewed by Humans
  * and be carried by a Carrier.
  *
  * <p>It also has title-related methods, which applies mainly to chest

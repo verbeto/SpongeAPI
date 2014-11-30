@@ -27,39 +27,38 @@ package org.spongepowered.api.entity.player;
 
 import com.google.common.base.Optional;
 import org.spongepowered.api.entity.ArmorEquipable;
-import org.spongepowered.api.item.inventory.Carrier;
 import org.spongepowered.api.util.Identifiable;
 
 /**
  * A User is the data usually associated with a Player that is persisted across server restarts.
  * This is in contrast to Player which represents the ingame entity associated with an online User.
  */
-public interface User extends Identifiable, ArmorEquipable, Carrier {
+public interface User extends Identifiable, ArmorEquipable {
 
     /**
      * Gets the player's last known username.
-     * 
+     *
      * @return The player's last known username
      */
     String getName();
 
     /**
      * Checks if this player has joined the server before.
-     * 
+     *
      * @return True If player has joined before
      */
     boolean hasJoinedBefore();
 
     /**
      * Checks if this player is banned.
-     * 
+     *
      * @return True If banned
      */
     boolean isBanned();
 
     /**
      * Checks if this player is whitelisted.
-     * 
+     *
      * @return True If whitelisted
      */
     boolean isWhitelisted();

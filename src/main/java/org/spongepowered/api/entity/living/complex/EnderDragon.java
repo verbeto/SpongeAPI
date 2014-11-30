@@ -29,9 +29,8 @@ import com.google.common.base.Optional;
 import org.spongepowered.api.entity.EnderCrystal;
 import org.spongepowered.api.entity.living.Agent;
 
-import java.util.Set;
-
 import javax.annotation.Nullable;
+import java.util.Set;
 
 /**
  * Represents an Ender Dragon.

@@ -22,43 +22,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item;
 
-import java.util.Map;
-import java.util.Set;
-
-/**
- * An ItemDictionary is a store of {@link ItemTypes}.
- *
- * <p>Note that the ItemDictionary's keys are different from Minecraft item
- * ids. Minecraft item IDs are namespaces, e.g. minecraft:carrot while
- * ItemDictionary keys are not, by design(e.g. carrot). This is mainly to keep
- * supporting the existing Forge 'ore dictionary'.</p>
- */
-public interface ItemDictionary {
-
-    /**
-     * Registers an ItemType in the dictionary with a String key.
-     *
-     * @param key The key of the item as a String
-     * @param type The item type to register
-     */
-    void register(String key, ItemType type);
-
-    /**
-     * Retrieves the item types registered for the given key.
-     *
-     * @param key The key of the items as a String
-     * @return The item types registered for the given key
-     */
-    Set<ItemType> get(String key);
-
-    /**
-     * Retrieves all items registered in this item dictionary, mapped by
-     * their key.
-     *
-     * @return A map of all items registered
-     */
-    Map<String, Set<ItemType>> getAllItems();
-
-}
+@org.spongepowered.api.util.annotation.NonnullByDefault
+package org.spongepowered.api.item.merchant;

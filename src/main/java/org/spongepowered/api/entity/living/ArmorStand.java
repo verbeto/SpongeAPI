@@ -25,14 +25,13 @@
 package org.spongepowered.api.entity.living;
 
 import org.spongepowered.api.entity.ArmorEquipable;
-import org.spongepowered.api.item.inventory.Carrier;
 import org.spongepowered.api.item.inventory.EquipmentInventory;
 import org.spongepowered.api.math.EulerDirection;
 
 /**
  * Represents an armor stand.
  */
-public interface ArmorStand extends Living, ArmorEquipable, Carrier {
+public interface ArmorStand extends Living, ArmorEquipable {
 
     /**
      * Gets the direction the headpiece is aiming at.

@@ -24,11 +24,11 @@
  */
 package org.spongepowered.api.entity.living.villager;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import com.google.common.base.Optional;
 
 import java.util.List;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * A utility class for getting all available {@link Career}s.
@@ -36,7 +36,6 @@ import java.util.List;
 public final class Careers {
 
     private Careers() {
-
     }
 
     public static final Career FARMER = null;
