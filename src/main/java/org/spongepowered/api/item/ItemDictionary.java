@@ -22,58 +22,43 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.item;
 
-package org.spongepowered.api;
-
-import com.google.common.base.Optional;
-import org.spongepowered.api.block.BlockType;
-import org.spongepowered.api.item.ItemDictionary;
-import org.spongepowered.api.item.ItemType;
-import org.spongepowered.api.item.recipe.RecipeRegistry;
+import java.util.Map;
+import java.util.Set;
 
 /**
- * Provides an easy way to retrieve and set types from a {@link Game}.
+ * An ItemDictionary is a store of {@link ItemTypes}.
+ *
+ * <p>Note that the ItemDictionary's keys are different from Minecraft item
+ * ids. Minecraft item IDs are namespaces, e.g. minecraft:carrot while
+ * ItemDictionary keys are not, by design(e.g. carrot). This is mainly to keep
+ * supporting the existing Forge 'ore dictionary'.</p>
  */
-public interface GameRegistry {
+public interface ItemDictionary {
 
     /**
-     * Gets a {@link BlockType} by its identifier.
+     * Registers an ItemType in the dictionary with a String key.
      *
-     * @param id The id to look up
-     * @return The block or null if not found
+     * @param key The key of the item as a String
+     * @param type The item type to register
      */
-    Optional<BlockType> getBlock(String id);
+    void register(String key, ItemType type);
 
     /**
-     * Gets an {@link ItemType} by its identifier.
+     * Retrieves the item types registered for the given key.
      *
-     * @param id The id to look up
-     * @return The item or null if not found
+     * @param key The key of the items as a String
+     * @return The item types registered for the given key
      */
-    Optional<ItemType> getItem(String id);
+    Set<ItemType> get(String key);
 
     /**
-     * Gets the ID registered to the object.
+     * Retrieves all items registered in this item dictionary, mapped by
+     * their key.
      *
-     * @param obj The object to look up
-     * @return The id or null if none found
+     * @return A map of all items registered
      */
-    Optional<String> getId(Object obj);
-
-    /**
-     * Retrieves the ItemDictionary for this GameRegistry
-     * (and, by proxy, Game).
-     *
-     * @return The item dictionary
-     */
-    ItemDictionary getItemDictionary();
-
-    /**
-     * Retrieves the RecipeRegistry for this GameRegistry
-     * (and, by proxy, Game).
-     *
-     * @return The recipe registry
-     */
-    RecipeRegistry getRecipeRegistry();
+    Map<String, Set<ItemType>> getAllItems();
 
 }

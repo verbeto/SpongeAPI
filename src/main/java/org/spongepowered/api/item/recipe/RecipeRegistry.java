@@ -22,58 +22,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.item.recipe;
 
-package org.spongepowered.api;
-
-import com.google.common.base.Optional;
-import org.spongepowered.api.block.BlockType;
-import org.spongepowered.api.item.ItemDictionary;
-import org.spongepowered.api.item.ItemType;
-import org.spongepowered.api.item.recipe.RecipeRegistry;
+import java.util.Set;
 
 /**
- * Provides an easy way to retrieve and set types from a {@link Game}.
+ * A RecipeRegistry holds all registered recipes for a given game.
  */
-public interface GameRegistry {
+public interface RecipeRegistry {
 
     /**
-     * Gets a {@link BlockType} by its identifier.
+     * Registers the given Recipe to make it available to craft.
      *
-     * @param id The id to look up
-     * @return The block or null if not found
+     * @param recipe The Recipe to register
      */
-    Optional<BlockType> getBlock(String id);
+    void register(Recipe recipe);
 
     /**
-     * Gets an {@link ItemType} by its identifier.
+     * Removes the given Recipe from registration in this registry.
      *
-     * @param id The id to look up
-     * @return The item or null if not found
+     * @param recipe The Recipe to unregister
      */
-    Optional<ItemType> getItem(String id);
+    void remove(Recipe recipe);
 
     /**
-     * Gets the ID registered to the object.
+     * Retrieves all recipes registered in this registry.
      *
-     * @param obj The object to look up
-     * @return The id or null if none found
+     * @return All registered recipes
      */
-    Optional<String> getId(Object obj);
-
-    /**
-     * Retrieves the ItemDictionary for this GameRegistry
-     * (and, by proxy, Game).
-     *
-     * @return The item dictionary
-     */
-    ItemDictionary getItemDictionary();
-
-    /**
-     * Retrieves the RecipeRegistry for this GameRegistry
-     * (and, by proxy, Game).
-     *
-     * @return The recipe registry
-     */
-    RecipeRegistry getRecipeRegistry();
+    Set<Recipe> getRecipes();
 
 }

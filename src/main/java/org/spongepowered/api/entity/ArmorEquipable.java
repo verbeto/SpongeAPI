@@ -133,6 +133,6 @@ public interface ArmorEquipable extends Identifiable, Carrier {
      *
      * @return The equipment inventory
      */
-    EquipmentInventory getInventory();
+    EquipmentInventory<?> getInventory();
 
 }
