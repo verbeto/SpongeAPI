@@ -30,7 +30,7 @@ import org.spongepowered.api.block.BlockType;
 import org.spongepowered.api.item.ItemType;
 
 /**
- * Provides an easy way to retrieve types from a {@link Game}.
+ * Provides an easy way to retrieve and set types from a {@link Game}.
  */
 public interface GameRegistry {
 
@@ -57,4 +57,12 @@ public interface GameRegistry {
      * @return The id or null if none found
      */
     Optional<String> getId(Object obj);
+
+    /**
+     * Registers an item type in the item type dictionary.
+     *
+     * @param type The type of the item to set
+     */
+    void registerItem(ItemType type);
+
 }
