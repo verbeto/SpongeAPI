@@ -30,6 +30,18 @@ package org.spongepowered.api.item.recipe;
  */
 interface RecipeFactory {
 
+    /**
+     * Creates a new {@link ShapedRecipeBuilder} instance.
+     *
+     * @return The created ShapedRecipeBuilder
+     */
+    ShapedRecipeBuilder shapedBuilder();
 
+    /**
+     * Creates a new {@link ShapelessRecipeBuilder} instance.
+     *
+     * @return The created ShapelessRecipeBuilder
+     */
+    ShapelessRecipeBuilder shapelessBuilder();
 
 }

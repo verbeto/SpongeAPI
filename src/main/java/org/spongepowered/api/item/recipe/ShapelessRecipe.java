@@ -24,7 +24,21 @@
  */
 package org.spongepowered.api.item.recipe;
 
+import org.spongepowered.api.item.ItemStack;
+
+import java.util.List;
+
+/**
+ * A ShapelessRecipe is a Recipe that does not have shape and just has a
+ * list of ingredients.
+ */
 public interface ShapelessRecipe extends Recipe {
 
+    /**
+     * Gets the ingredients for this ShapelessRecipe.
+     *
+     * @return The ingredients
+     */
+    List<ItemStack> getIngredients();
 
 }

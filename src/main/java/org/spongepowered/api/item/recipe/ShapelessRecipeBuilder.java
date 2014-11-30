@@ -26,12 +26,31 @@ package org.spongepowered.api.item.recipe;
 
 import org.spongepowered.api.item.ItemStack;
 
+/**
+ * A ShapelessRecipeBuilder builds shapeless recipes.
+ */
 public interface ShapelessRecipeBuilder  {
 
-    void addInput(ItemStack input);
+    /**
+     * Adds an ingredient to the requirements of this ShapelessRecipe
+     *
+     * @param ingredient The ingredient
+     */
+    void addIngredient(ItemStack ingredient);
 
+    /**
+     * Adds a resultant ItemStack for when this ShapelessRecipe is
+     * correctly crafted.
+     *
+     * @param result The result
+     */
     void addResult(ItemStack result);
 
+    /**
+     * Builds a new ShapelessRecipe from this builder.
+     *
+     * @return A new ShapelessRecipe
+     */
     ShapelessRecipe build();
 
 }

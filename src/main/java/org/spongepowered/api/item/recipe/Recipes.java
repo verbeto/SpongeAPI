@@ -24,11 +24,32 @@
  */
 package org.spongepowered.api.item.recipe;
 
+/**
+ * A convenience class for constructing Recipes.
+ */
 public class Recipes {
 
     private static final RecipeFactory factory = null;
 
     private Recipes() {
+    }
+
+    /**
+     * Creates a new {@link ShapedRecipeBuilder} instance.
+     *
+     * @return The created ShapedRecipeBuilder
+     */
+    public static ShapedRecipeBuilder shapedBuilder() {
+        return factory.shapedBuilder();
+    }
+
+    /**
+     * Creates a new {@link ShapelessRecipeBuilder} instance.
+     *
+     * @return The created ShapelessRecipeBuilder
+     */
+    public static ShapelessRecipeBuilder shapelessBuilder() {
+        return factory.shapelessBuilder();
     }
 
 }

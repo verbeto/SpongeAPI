@@ -24,5 +24,44 @@
  */
 package org.spongepowered.api.item.recipe;
 
-public interface ShapedRecipe {
+import com.google.common.base.Optional;
+import org.spongepowered.api.item.ItemStack;
+import org.spongepowered.api.math.Vector2i;
+
+/**
+ * A ShapedRecipe is a Recipe that has shape and fits into a grid.
+ */
+public interface ShapedRecipe extends Recipe {
+
+    /**
+     * Gets the width of the grid this ShapedRecipe fits into.
+     *
+     * @return The width of the grid
+     */
+    int getWidth();
+
+    /**
+     * Gets the height of the grid this ShapedRecipe fits into.
+     *
+     * @return The height of the grid
+     */
+    int getHeight();
+
+    /**
+     * Gets the ingredient required in the given coordinates.
+     *
+     * @param x The x coordinate
+     * @param y The y coordinate
+     * @return The ingredient
+     */
+    Optional<ItemStack> getIngredient(int x, int y);
+
+    /**
+     * Gets the ingredient required in the given position.
+     *
+     * @param pos The position
+     * @return The ingredient
+     */
+    Optional<ItemStack> getIngredient(Vector2i pos);
+
 }

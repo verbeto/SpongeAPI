@@ -35,7 +35,8 @@ import java.util.List;
  * A Recipe represents some craftable recipe in the game.
  * It is essentially a Predicate that checks for if a recipe is valid as well
  * as a function from an {@link ItemGrid}(a crafting matrix) to a
- * list of {@link ItemStack}(the crafting result).
+ * list of {@link ItemStack}(the crafting result), therefore making it an
+ * immutable interface.
  *
  * <p>The passed in ItemGrid is usually a crafting inventory, e.g.
  * a 2x2 or 3x3 crafting matrix.</p>
@@ -62,7 +63,7 @@ public interface Recipe {
     boolean isValid(ItemGrid grid);
 
     /**
-     * Returns the results for running this Recipe over a
+     * Returns the results for running this Recipe over an ItemGrid
      *
      * @param grid An ItemGrid as input
      * @return A list of ItemStacks or {@link Optional#absent()} if the given

@@ -31,7 +31,7 @@ import org.spongepowered.api.math.Vector2i;
  * meaning that its slots can be referred to by xy coordinates
  * as well as single indices.
  *
- * <p>The indices of an ItemGrid should progress left-to-right then
+ * <p>The indices of an ItemGrid should progress left-to-right and
  * top-to-bottom, and so should the iterator.</p>
  */
 public interface ItemGrid extends ItemList {
