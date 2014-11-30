@@ -25,7 +25,7 @@
 package org.spongepowered.api.item.recipe;
 
 import com.google.common.base.Optional;
-import org.spongepowered.api.item.ItemGrid;
+import org.spongepowered.api.item.list.ItemGrid;
 import org.spongepowered.api.item.ItemStack;
 import org.spongepowered.api.item.ItemType;
 

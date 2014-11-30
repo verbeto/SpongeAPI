@@ -24,12 +24,11 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
-import org.spongepowered.api.item.ItemGrid;
-import org.spongepowered.api.item.inventory.Inventory;
+import org.spongepowered.api.item.inventory.CraftingInventory;
 
 /**
  * Represents the inventory of a Workbench.
  */
-public interface WorkbenchInventory extends Inventory, ItemGrid {
+public interface WorkbenchInventory extends BlockInventory, CraftingInventory {
 
 }

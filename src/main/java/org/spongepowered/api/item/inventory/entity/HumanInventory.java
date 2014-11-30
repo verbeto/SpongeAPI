@@ -28,6 +28,7 @@ import org.spongepowered.api.entity.living.Human;
 import org.spongepowered.api.entity.player.Player;
 import org.spongepowered.api.item.ItemStack;
 import org.spongepowered.api.item.ItemType;
+import org.spongepowered.api.item.inventory.CraftingInventory;
 import org.spongepowered.api.item.inventory.EquipmentInventory;
 import org.spongepowered.api.text.message.Message;
 
@@ -38,7 +39,7 @@ import java.util.Set;
 /**
  * Represents the inventory of a Human or Player.
  */
-public interface HumanInventory extends EntityInventory<Human>, EquipmentInventory<Human> {
+public interface HumanInventory extends EntityInventory<Human>, EquipmentInventory<Human>, CraftingInventory {
 
     /**
      * Gets the slot that is currently being held by the Human.

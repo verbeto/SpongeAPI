@@ -25,7 +25,7 @@
 package org.spongepowered.api.item.inventory;
 
 import org.spongepowered.api.entity.living.Human;
-import org.spongepowered.api.item.ItemList;
+import org.spongepowered.api.item.list.ItemList;
 import org.spongepowered.api.text.message.Message;
 
 import java.util.Set;

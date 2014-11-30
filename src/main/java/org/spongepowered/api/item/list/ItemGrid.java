@@ -22,8 +22,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item;
+package org.spongepowered.api.item.list;
 
+import org.spongepowered.api.item.ItemStack;
 import org.spongepowered.api.math.Vector2i;
 
 /**
