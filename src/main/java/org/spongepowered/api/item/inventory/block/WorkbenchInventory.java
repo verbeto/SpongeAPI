@@ -24,7 +24,12 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
+import org.spongepowered.api.item.ItemGrid;
 import org.spongepowered.api.item.inventory.Inventory;
 
-public interface WorkbenchInventory extends Inventory {
+/**
+ * Represents the inventory of a Workbench.
+ */
+public interface WorkbenchInventory extends Inventory, ItemGrid {
+
 }

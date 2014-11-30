@@ -25,12 +25,26 @@
 package org.spongepowered.api.item.inventory.block;
 
 import org.spongepowered.api.item.inventory.Inventory;
-import org.spongepowered.api.item.inventory.block.ChestInventory;
-import org.spongepowered.api.item.list.ItemGrid;
 
+/**
+ * Represents the inventory of a double chest.
+ */
 public interface DoubleChestInventory extends Inventory {
 
+    /**
+     * Gets the inventory of the left side of the double chest
+     * this inventory represents.
+     *
+     * @return The left side of the chest
+     */
     ChestInventory getLeft();
+
+    /**
+     * Gets the inventory of the right side of the double chest
+     * this inventory represents.
+     *
+     * @return The right side of the chest
+     */
     ChestInventory getRight();
 
 }

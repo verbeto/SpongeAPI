@@ -79,6 +79,4 @@ public interface User extends Identifiable, ArmorEquipable, Carrier {
      */
     Optional<Player> getPlayer();
 
-
-
 }

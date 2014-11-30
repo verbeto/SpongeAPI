@@ -22,7 +22,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item.inventory.block;
 
-public interface EnchantingInventory {
-}
+@org.spongepowered.api.util.annotation.NonnullByDefault
+package org.spongepowered.api.item.inventory.block;

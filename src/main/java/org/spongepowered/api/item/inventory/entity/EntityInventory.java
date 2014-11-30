@@ -28,6 +28,11 @@ import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.item.inventory.Carrier;
 import org.spongepowered.api.item.inventory.Inventory;
 
+/**
+ * Represents an Inventory that is carried by an Entity.
+ *
+ * @param <E> The type of an EntityInventory's carrier
+ */
 public interface EntityInventory<E extends Carrier & Entity> extends Inventory {
 
     E getCarrier();

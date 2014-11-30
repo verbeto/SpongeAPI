@@ -24,16 +24,50 @@
  */
 package org.spongepowered.api.item.recipe;
 
-import org.spongepowered.api.item.list.ItemGrid;
+import com.google.common.base.Optional;
+import org.spongepowered.api.item.ItemGrid;
 import org.spongepowered.api.item.ItemStack;
 import org.spongepowered.api.item.ItemType;
 
+import java.util.List;
+
+/**
+ * A Recipe represents some craftable recipe in the game.
+ * It is essentially a Predicate that checks for if a recipe is valid as well
+ * as a function from an {@link ItemGrid}(a crafting matrix) to a
+ * list of {@link ItemStack}(the crafting result).
+ *
+ * <p>The passed in ItemGrid is usually a crafting inventory, e.g.
+ * a 2x2 or 3x3 crafting matrix.</p>
+ *
+ * <p>The requirements of a Recipe can be general, they just have to
+ * eventually return a boolean given an itemgrid.</p>
+ */
 public interface Recipe {
 
-    ItemType getResultType();
+    /**
+     * Returns the list of item types that result when successful crafting
+     * of this Recipe is completed.
+     *
+     * @return The resultant list of item types
+     */
+    List<ItemType> getResultTypes();
 
+    /**
+     * Checks if the given ItemGrid fits the required constraints to craft this Recipe.
+     *
+     * @param grid The ItemGrid to check for validity
+     * @return True if the given input matches this recipe's requirements
+     */
     boolean isValid(ItemGrid grid);
 
-    ItemStack getResult(ItemGrid grid);
+    /**
+     * Returns the results for running this Recipe over a
+     *
+     * @param grid An ItemGrid as input
+     * @return A list of ItemStacks or {@link Optional#absent()} if the given
+     *          ItemGrid does not match this recipe's requirements.
+     */
+    Optional<List<ItemStack>> getResults(ItemGrid grid);
 
 }

@@ -24,5 +24,9 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
+/**
+ * Represents the inventory of an Anvil.
+ */
 public interface AnvilInventory extends BlockInventory {
+
 }

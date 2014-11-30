@@ -33,6 +33,9 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+/**
+ * Represents a Merchant which can offer trades to customers.
+ */
 public interface Merchant extends Carrier {
 
     /**
@@ -76,6 +79,11 @@ public interface Merchant extends Carrier {
      */
     void setOffers(List<TradeOffer> offers);
 
+    /**
+     * Returns the inventory of this Merchant.
+     *
+     * @return The inventory of this merchant
+     */
     MerchantInventory getInventory();
 
 }

@@ -24,9 +24,11 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
-import org.spongepowered.api.block.Block;
 import org.spongepowered.api.item.inventory.Inventory;
 
+/**
+ * Represents an Inventory whose carrier is a Block.
+ */
 public interface BlockInventory extends Inventory {
 
     // TODO specific block classes with block nbt data API

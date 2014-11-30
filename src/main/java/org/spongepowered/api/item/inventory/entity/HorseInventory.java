@@ -26,5 +26,9 @@ package org.spongepowered.api.item.inventory.entity;
 
 import org.spongepowered.api.entity.living.animal.Horse;
 
+/**
+ * Represents the inventory of a Horse.
+ */
 public interface HorseInventory extends EntityInventory<Horse> {
+
 }

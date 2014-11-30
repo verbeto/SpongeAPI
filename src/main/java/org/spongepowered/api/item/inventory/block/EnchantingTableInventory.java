@@ -24,8 +24,8 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
-import org.spongepowered.api.item.inventory.Inventory;
-
-public interface BrewerInventory extends Inventory {
-
+/**
+ * Represents the inventory of an Enchanting Table.
+ */
+public interface EnchantingTableInventory extends BlockInventory {
 }

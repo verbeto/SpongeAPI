@@ -24,5 +24,9 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
+/**
+ * Represents the inventory of a Dropper.
+ */
 public interface DropperInventory extends BlockInventory {
+
 }

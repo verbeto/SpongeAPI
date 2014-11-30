@@ -26,7 +26,12 @@ package org.spongepowered.api.item.inventory;
 
 import org.spongepowered.api.entity.ArmorEquipable;
 
-public interface EquipmentInventory<E extends Carrier & ArmorEquipable> extends Inventory {
+/**
+ * An EquipmentInventory is the inventory of something that can equip armor.
+ *
+ * @param <E> The type of an EquipmentInventory's carrier
+ */
+public interface EquipmentInventory<E extends ArmorEquipable> extends Inventory {
 
     E getCarrier();
 

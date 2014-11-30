@@ -177,6 +177,11 @@ public interface ArmorStand extends Living, ArmorEquipable, Carrier {
      */
     void setHasBasePlate(boolean baseplate);
 
+    /**
+     * Gets the equipment inventory of this ArmorStand.
+     *
+     * @return The equipment inventory
+     */
     EquipmentInventory<ArmorStand> getInventory();
 
 }

@@ -24,8 +24,9 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
+/**
+ * Represents the inventory of a Beacon.
+ */
 public interface BeaconInventory extends BlockInventory {
-
-
 
 }

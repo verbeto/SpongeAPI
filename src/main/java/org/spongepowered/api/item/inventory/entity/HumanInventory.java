@@ -35,10 +35,23 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
+/**
+ * Represents the inventory of a Human or Player.
+ */
 public interface HumanInventory extends EntityInventory<Human>, EquipmentInventory<Human> {
 
-    void setHeldSlot(int index);
+    /**
+     * Gets the slot that is currently being held by the Human.
+     *
+     * @return The slot being currently held as an integer from 0-8, inclusive
+     */
+    int getHeldSlot();
 
-    int getHeldSlot(int index);
+    /**
+     * Sets the slot to be held by the Human.
+     *
+     * @param index The slot to hold as an integer from 0-8, inclusive
+     */
+    void setHeldSlot(int index);
 
 }

@@ -49,6 +49,11 @@ public interface Zombie extends Monster, ArmorEquipable, Ageable, Carrier {
      */
     void setVillagerZombie(boolean villagerZombie);
 
+    /**
+     * Gets the equipment inventory of this Zombie.
+     *
+     * @return The equipment inventory
+     */
     EquipmentInventory<Zombie> getInventory();
 
 }

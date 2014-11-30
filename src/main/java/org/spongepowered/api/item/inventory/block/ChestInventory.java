@@ -24,8 +24,11 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
-import org.spongepowered.api.item.inventory.block.BlockInventory;
-import org.spongepowered.api.item.list.ItemGrid;
+import org.spongepowered.api.item.inventory.SidedInventory;
 
+/**
+ * Represents the inventory of a Chest.
+ */
 public interface ChestInventory extends BlockInventory {
+
 }

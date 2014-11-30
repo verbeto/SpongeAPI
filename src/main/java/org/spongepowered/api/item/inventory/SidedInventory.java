@@ -29,12 +29,43 @@ import org.spongepowered.api.util.Direction;
 
 import java.util.Set;
 
+/**
+ * A SidedInventory is an inventory where items can be inserted using
+ * automation(hoppers in vanilla MC, for instance).
+ */
 public interface SidedInventory extends Inventory {
 
+    /**
+     * Returns the slots that are connected with a certain face
+     * (can be inserted into or extracted from)
+     *
+     * @param direction The normal to the plane of the face
+     * @return The set of slots connected with the given face
+     */
     Set<Integer> getSlotsForFace(Direction direction);
 
-    boolean canInsertItem(int index, ItemStack itemStack, Direction direction);
+    /**
+     * Checks for whether the given item can be inserted into the given index
+     * from the given face.
+     *
+     * @param index The slot index to insert into
+     * @param item The item to be inserted
+     * @param direction The normal to the plane of the face
+     * @return True if the given item can be inserted into the given index from
+     *          the given face
+     */
+    boolean canInsertItem(int index, ItemStack item, Direction direction);
 
-    boolean canExtractItem(int index, ItemStack itemStack, Direction direction);
+    /**
+     * Checks for whether the given item can be extracted from the given index
+     * from the given face.
+     *
+     * @param index The slot index to extract from
+     * @param item The item to be extracted
+     * @param direction The normal to the plane of the face
+     * @return True if the given item can be inserted into the given index from
+     *          the given face
+     */
+    boolean canExtractItem(int index, ItemStack item, Direction direction);
 
 }

@@ -22,17 +22,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item.list;
+package org.spongepowered.api.item.inventory.block;
 
-import org.spongepowered.api.item.ItemList;
-import org.spongepowered.api.item.ItemStack;
+import org.spongepowered.api.item.inventory.Inventory;
+import org.spongepowered.api.item.inventory.SidedInventory;
 
-public interface ItemSingle extends ItemList {
-
-    void setItem(ItemStack stack);
-
-    ItemStack getItem();
-
-    ItemStack splitItem(int count);
+/**
+ * Represents the inventory of a Brewing Stand.
+ */
+public interface BrewingStandInventory extends Inventory, SidedInventory {
 
 }

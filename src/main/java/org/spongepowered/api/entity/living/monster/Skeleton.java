@@ -28,11 +28,13 @@ package org.spongepowered.api.entity.living.monster;
 import org.spongepowered.api.entity.ArmorEquipable;
 import org.spongepowered.api.entity.living.meta.SkeletonType;
 import org.spongepowered.api.entity.projectile.source.ProjectileSource;
+import org.spongepowered.api.item.inventory.Carrier;
+import org.spongepowered.api.item.inventory.EquipmentInventory;
 
 /**
  * Represents a Skeleton.
  */
-public interface Skeleton extends Monster, ArmorEquipable, ProjectileSource {
+public interface Skeleton extends Monster, ArmorEquipable, ProjectileSource, Carrier {
 
     /**
      * Gets the current skeleton type for this skeleton.
@@ -51,5 +53,12 @@ public interface Skeleton extends Monster, ArmorEquipable, ProjectileSource {
      * @param skeletonType The new skeleton type
      */
     void setSkeletonType(SkeletonType skeletonType);
+
+    /**
+     * Gets the equipment inventory of this Skeleton.
+     *
+     * @return The equipment inventory
+     */
+    EquipmentInventory<Skeleton> getInventory();
 
 }

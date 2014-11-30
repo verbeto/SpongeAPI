@@ -22,31 +22,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.item.list;
 
-import org.spongepowered.api.item.ItemList;
-import org.spongepowered.api.item.ItemStack;
-import org.spongepowered.api.math.Vector2i;
-
-public interface ItemGrid extends ItemList {
-
-    int getWidth();
-    int getHeight();
-
-    Vector2i getDimensions();
-
-    void setItem(Vector2i pos, ItemStack stack);
-    void setItem(int x, int y, ItemStack stack);
-
-    ItemStack getItem(Vector2i pos);
-    ItemStack getItem(int x, int y);
-
-    ItemStack splitItem(int x, int y, int count);
-    ItemStack splitItem(Vector2i pos);
-
-    int getIndex(Vector2i pos);
-    int getIndex(int x, int y);
-
-    Vector2i getPosition(int index);
-
-}
+@org.spongepowered.api.util.annotation.NonnullByDefault
+package org.spongepowered.api.item.inventory.entity;

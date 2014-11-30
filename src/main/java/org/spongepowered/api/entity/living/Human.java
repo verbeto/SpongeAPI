@@ -25,6 +25,7 @@
 
 package org.spongepowered.api.entity.living;
 
+import com.google.common.base.Optional;
 import org.spongepowered.api.entity.ArmorEquipable;
 import org.spongepowered.api.entity.projectile.source.ProjectileSource;
 import org.spongepowered.api.item.inventory.Carrier;
@@ -83,10 +84,26 @@ public interface Human extends Agent, ArmorEquipable, ProjectileSource, Carrier 
      */
     boolean isViewingInventory();
 
+    /**
+     * Gets the inventory of this human entity.
+     *
+     * @return The inventory
+     */
     HumanInventory getInventory();
 
-    Inventory getOpenInventory();
+    /**
+     * Gets the currently viewed inventory of this human entity, if it is
+     * currently viewing one.
+     *
+     * @return An inventory if this human entity is viewing one, otherwise
+     *          {@link Optional#absent()}
+     */
+    Optional<Inventory> getOpenInventory();
 
+    /**
+     * Closes the currently viewed entity of this human entity, if it is
+     * currently viewing one.
+     */
     void closeInventory();
 
 }

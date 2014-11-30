@@ -24,13 +24,11 @@
  */
 package org.spongepowered.api.item.inventory.block;
 
-import org.spongepowered.api.item.inventory.block.BlockInventory;
-import org.spongepowered.api.item.list.ItemSingle;
+import org.spongepowered.api.item.inventory.SidedInventory;
 
-public interface FurnaceInventory extends BlockInventory {
-
-    ItemSingle getSmelting();
-    ItemSingle getFuel();
-    ItemSingle getResult();
+/**
+ * Represents the inventory of a Furnace.
+ */
+public interface FurnaceInventory extends BlockInventory, SidedInventory {
 
 }

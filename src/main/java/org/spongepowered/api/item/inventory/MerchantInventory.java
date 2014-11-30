@@ -24,12 +24,18 @@
  */
 package org.spongepowered.api.item.inventory;
 
-import org.spongepowered.api.item.inventory.Inventory;
-import org.spongepowered.api.item.inventory.entity.EntityInventory;
 import org.spongepowered.api.item.merchant.Merchant;
 
+/**
+ * A MerchantInventory is an inventory with a Merchant as a carrier.
+ */
 public interface MerchantInventory extends Inventory {
 
+    /**
+     * Gets the carrier of this inventory as a Merchant.
+     *
+     * @return The carreir of this inventory
+     */
     Merchant getCarrier();
 
 }
