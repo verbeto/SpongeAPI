@@ -27,6 +27,7 @@ package org.spongepowered.api.service.persistence.data;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.Optional;
+import org.spongepowered.api.service.persistence.serialization.DataSerializable;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -233,6 +234,11 @@ public class MemoryDataView implements DataView {
 
     @Override
     public Optional<List<Map<?, ?>>> getMapList(String path) {
+        return null; // TODO implement
+    }
+
+    @Override
+    public <T extends DataSerializable> Optional<T> getSerialiable(String path, Class<T> clazz) {
         return null; // TODO implement
     }
 
