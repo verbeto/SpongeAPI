@@ -364,11 +364,4 @@ public interface DataView {
      */
     <T extends DataSerializable> Optional<T> getSerialiable(String path, Class<T> clazz);
 
-    /**
-     * Gets a {@link Map} of this {@link DataView} and all of it's children.
-     * <p>This can be used as a serialization object as it is a copy.</p>
-     *
-     * @return A copy of the data represented by this view
-     */
-    Map<String, Object> toMap();
 }

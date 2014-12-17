@@ -22,16 +22,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+package org.spongepowered.api.service.persistence;
 
-package org.spongepowered.api.entity;
+public class InvalidDataException extends UnsupportedOperationException {
 
-import org.spongepowered.api.service.persistence.serialization.DataSerializable;
 
-/**
- * A mutable complete representation of an entity type and its associated data.
- * <p>Being that this is a snapshot, all the data from {@link #serializeToContainer()} may
- * be threadsafe and used for storage purposes.</p>
- */
-public interface EntitySnapshot extends EntityState, DataSerializable {
 
 }
