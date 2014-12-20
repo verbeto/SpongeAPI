@@ -359,6 +359,6 @@ public interface DataView {
      * @param <T> The type of {@link DataSerializable} object
      * @return The deserialized object, if available
      */
-    <T extends DataSerializable> Optional<T> getSerialiable(DataQuery path, Class<T> clazz);
+    <T extends DataSerializable> Optional<T> getSerializable(DataQuery path, Class<T> clazz);
 
 }

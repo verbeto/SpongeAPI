@@ -39,16 +39,9 @@ import java.util.Iterator;
  * the chunks represented by {@link DataContainer}s should be avoided
  * <strong>AT ALL COSTS</strong>. The data represented is a copy and
  * therefore shouldn't be considered synchronized to live data.</p>
+ * <p>Removing is not supported <strong>AT ALL AND WILL THROW AN EXCEPTION</strong></p>
  *
  */
 public interface ChunkIterator extends Iterator<Optional<DataContainer>> {
-
-    /**
-     * Chunks can not be removed by a ChunkIterator.
-     *
-     * @throws UnsupportedOperationException Not supported at all
-     */
-    @Override
-    void remove() throws UnsupportedOperationException;
 
 }
