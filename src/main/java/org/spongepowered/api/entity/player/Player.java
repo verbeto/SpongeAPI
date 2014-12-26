@@ -30,8 +30,9 @@ import org.spongepowered.api.entity.living.Human;
 import org.spongepowered.api.entity.player.gamemode.GameMode;
 import org.spongepowered.api.entity.player.gamemode.GameModes;
 import org.spongepowered.api.net.PlayerConnection;
-import org.spongepowered.api.text.chat.ChatType;
+import org.spongepowered.api.service.bans.BanInfo;
 import org.spongepowered.api.text.message.Message;
+import org.spongepowered.api.text.chat.ChatType;
 import org.spongepowered.api.text.title.Title;
 import org.spongepowered.api.text.translation.locale.Locales;
 import org.spongepowered.api.util.command.CommandSource;
@@ -144,4 +145,54 @@ public interface Player extends Human, User, CommandSource, Viewer {
      * @return The connection
      */
     PlayerConnection getConnection();
+
+    /*
+     * Returns if the player is banned or not (from the vanilla banning system)
+     *
+     * @return Banned state of player.
+     */
+    boolean isBanned();
+
+    /**
+     * Kicks the player using the vanilla banning system.
+     */
+    void kick();
+
+    /**
+     * Kicks the player using the vanilla banning system.
+     *
+     * @param reason The reason for the kick.
+     */
+    void kick(String reason);
+
+    /**
+     * Bans the player using the vanilla banning system, with default settings.
+     *
+     * Triggers {@link PlayerBannedEvent}.
+     */
+    BanInfo ban();
+
+    /**
+     * Bans the player using the vanilla banning system, with custom settings.
+     *
+     * Triggers {@link PlayerBannedEvent}.
+     *
+     * @param duration The duration of the ban in seconds, 0 for forever.
+     * @param reason The reason for the ban.
+     *
+     * @return A new instance of {@link BanInfo}
+     */
+    BanInfo ban(long duration, String reason);
+
+    /**
+     * Pardons the player using the vanilla banning system.
+     */
+    void pardon();
+
+    /**
+     * Returns the BanInfo for the current ban; returns null if player is not banned.
+     *
+     * @return The player's instance of {@link BanInfo}.
+     */
+     BanInfo getBanInfo();
 }
