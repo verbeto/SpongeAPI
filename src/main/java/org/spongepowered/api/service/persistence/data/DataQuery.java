@@ -24,9 +24,7 @@
  */
 package org.spongepowered.api.service.persistence.data;
 
-import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
-import org.spongepowered.api.service.persistence.serialization.DataSerializable;
 
 import java.util.List;
 import java.util.regex.Pattern;
@@ -123,40 +121,11 @@ public final class DataQuery {
         ImmutableList.Builder<DataQuery> builder =
                 new ImmutableList.Builder<DataQuery>();
 
-        for(String part: getParts()) {
+        for (String part: getParts()) {
             builder.add(new DataQuery(part));
         }
 
         return builder.build();
-    }
-
-    /**
-     * Runs this query over the given view.
-     *
-     * <p>If the result does not exist,
-     * this method returns {@link Optional#absent()}.</p>
-     *
-     * @param view The view to run this query over
-     * @return The result if it exists or {@link Optional#absent()}
-     */
-    public Optional<Object> run(DataView view) {
-        return view.get(this);
-    }
-
-    /**
-     * Runs this query over the given view, attempting to cast the result to
-     * a subtype of DataSerializable.
-     *
-     * <p>If the result does not exist or is not of the given type,
-     * this method returns {@link Optional#absent()}.</p>
-     *
-     * @param view The view to run this query over
-     * @param clazz The class of the expected result type
-     * @param <T> The expected result type
-     * @return The result if it exists or {@link Optional#absent()}
-     */
-    public <T extends DataSerializable> Optional<T> run(DataView view, Class<T> clazz) {
-        return view.getSerializable(this, clazz);
     }
 
     /**
