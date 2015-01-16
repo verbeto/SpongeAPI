@@ -92,7 +92,7 @@ public interface Game {
     SynchronousScheduler getSyncScheduler();
 
     /**
-     * Gets the {@link org.spongepowered.api.service.scheduler.SynchronousScheduler}.
+     * Gets the {@link org.spongepowered.api.service.scheduler.AsynchronousScheduler}.
      *
      * @return The scheduler
      */
