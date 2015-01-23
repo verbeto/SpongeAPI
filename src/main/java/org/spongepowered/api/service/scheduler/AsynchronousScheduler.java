@@ -276,7 +276,6 @@ public interface AsynchronousScheduler {
      * @return Optional&lt;Task&gt; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runRepeatingTaskAfter(Object plugin, Runnable task, TimeUnit scale, long interval, long delay);
-
     /**
      * Retrieves a scheduled or running task by its unique ID.
      *

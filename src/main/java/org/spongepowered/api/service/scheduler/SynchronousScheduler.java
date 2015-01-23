@@ -47,7 +47,7 @@ import java.util.UUID;
  * by the Plugin to ensure that execution within the AsynchronousScheduler is safe</p>
  *
  * <p>In contrast the SynchronousScheduler does operate such that the Runnable targets of each Task
- * are executed in series and executed in sync with the {@link TickEvent.ServerTickEvent} on the {@link Phase}.START.</p>
+ * are executed in series and executed in sync with the TickEvent.ServerTickEvent on the Phase.START.</p>
  *
  * <p>Examples of how to setup the use of the Scheduler are included in the API descriptions in this interface.</p>
  *
@@ -204,7 +204,7 @@ public interface SynchronousScheduler {
      *
      * <p>
      * <code>
-     *     Optional<PluginContainer> result;
+     *     Optional&lt;PluginContainer&gt;&nbsp; result;
      *     result = evt.getGame().getPluginManager().getPlugin("YOUR_PLUGIN");
      *     PluginContainer pluginContainer = result.get();
      * </code>
