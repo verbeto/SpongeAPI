@@ -222,7 +222,7 @@ public interface SynchronousScheduler {
      * @param task  The Runnable object that implements a run() method to execute the Task desired
      * @param delay  The offset in Ticks before running the task.
      * @param interval The offset in Ticks before running the task.
-     * @return Optional<Task> Either Optional.absent() if invalid or a reference to the new Task
+     * @return Optional&lt;Task&gt;&nbsp; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runRepeatingTaskAfter(Object plugin, Runnable task, long interval, long delay);
 
