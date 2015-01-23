@@ -36,7 +36,7 @@ public interface ServiceReference<T> {
      *
      * @return reference to the latest value of the service -- may not be present
      */
-    public Optional<T> ref();
+    Optional<T> ref();
 
     /**
      * Block until the service is available. Bad idea to run this on the main thread.
@@ -44,7 +44,7 @@ public interface ServiceReference<T> {
      * @return The service if available
      * @throws InterruptedException if waiting is interrupted
      */
-    public T await() throws InterruptedException;
+    T await() throws InterruptedException;
 
     /**
      * Queue a command to be executed after a service is registered.
@@ -55,5 +55,5 @@ public interface ServiceReference<T> {
      *
      * @param run The function to execute
      */
-    public void executeWhenPresent(Predicate<T> run);
+    void executeWhenPresent(Predicate<T> run);
 }

@@ -83,10 +83,11 @@
         <module name="FallThrough"/>
         <module name="UpperEll"/>
         <module name="ModifierOrder"/>
-        <!-- TODO: This is disabled because the Gradle License plugin doesn't create a new line after the license header, do we want to enable this?
         <module name="EmptyLineSeparator">
+            <!-- TODO: This is disabled for package because the Gradle License plugin doesn't create a new line after the license header, do we want to enable this? -->
+            <property name="tokens" value="IMPORT, CLASS_DEF, ENUM_DEF, INTERFACE_DEF, CTOR_DEF, METHOD_DEF, STATIC_INIT, INSTANCE_INIT, VARIABLE_DEF"/>
             <property name="allowNoEmptyLineBetweenFields" value="true"/>
-        </module>-->
+        </module>
         <module name="SeparatorWrap">
             <property name="tokens" value="DOT"/>
             <property name="option" value="nl"/>
@@ -156,14 +157,15 @@
             <!--<property name="arrayInitIndent" value="2"/>-->
             <property name="arrayInitIndent" value="4"/>
         </module>
-        <!--<module name="AbbreviationAsWordInName">
+        <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="1"/>
-        </module>-->
+        </module>
         <module name="OverloadMethodsDeclarationOrder"/>
         <module name="VariableDeclarationUsageDistance"/>
         <module name="CustomImportOrder">
             <property name="thirdPartyPackageRegExp" value=".*"/>
+            <property name="caseSensitiveCompare" value="true"/>
             <!--<property name="specialImportsRegExp" value="com.google"/>-->
             <property name="sortImportsInGroupAlphabetically" value="true"/>
             <property name="customImportOrderRules" value="STATIC###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE###STANDARD_JAVA_PACKAGE"/>
@@ -200,6 +202,7 @@
             -->
             <property name="allowedAnnotations" value="Override, Test"/>
             <property name="allowThrowsTagsForSubclasses" value="true"/>
+            <property name="checkAnnotationsReturnTag" value="true"/>
         </module>
         <module name="MethodName">
             <!--<property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9_]*$"/>-->
@@ -210,11 +213,16 @@
         <module name="SingleLineJavadoc"/>
 
 
+        <module name="RedundantImport"/>
+        <module name="RedundantModifier"/>
+        <module name="RequireThis">
+            <property name="checkMethods" value="false"/>
+        </module>
     </module>
-
     <module name="NewlineAtEndOfFile"/>
-
     <module name="SuppressionFilter">
-        <property name="file" value="${suppressions}"/>
+        <property name="file" value="${basedir}/checkstyle-suppressions.xml"/>
     </module>
+
+    <property name="basedir" value="${basedir}"/>
 </module>

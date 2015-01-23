@@ -108,22 +108,38 @@ public class ClassGeneratorProviderTest {
         assertThat(result.getChar(), is((char) 0));
     }
 
-    public static interface PrimitiveContainer {
+    public interface PrimitiveContainer {
+
         byte getByte();
+
         void setByte(byte v);
+
         short getShort();
+
         void setShort(short v);
+
         int getInt();
+
         void setInt(int v);
+
         long getLong();
+
         void setLong(long v);
+
         float getFloat();
+
         void setFloat(float v);
+
         double getDouble();
+
         void setDouble(double v);
+
         boolean getBoolean();
+
         void setBoolean(boolean v);
+
         char getChar();
+
         void setChar(char v);
     }
 
@@ -189,22 +205,38 @@ public class ClassGeneratorProviderTest {
         assertThat(result.getChar(), is(nullValue()));
     }
 
-    public static interface BoxedPrimitiveContainer {
+    public interface BoxedPrimitiveContainer {
+
         Byte getByte();
+
         void setByte(Byte v);
+
         Short getShort();
+
         void setShort(Short v);
+
         Integer getInt();
+
         void setInt(Integer v);
+
         Long getLong();
+
         void setLong(Long v);
+
         Float getFloat();
+
         void setFloat(Float v);
+
         Double getDouble();
+
         void setDouble(Double v);
+
         Boolean getBoolean();
+
         void setBoolean(Boolean v);
+
         Character getChar();
+
         void setChar(Character v);
     }
 
@@ -216,47 +248,65 @@ public class ClassGeneratorProviderTest {
         Object object = new Object();
 
         Map<String, Object> values = Maps.newHashMap();
-        values.put("bytes", new byte[] { 1 });
-        values.put("shorts", new short[] { 2 });
-        values.put("ints", new int[] { 3 });
-        values.put("longs", new long[] { 4 });
+        values.put("bytes", new byte[]{1});
+        values.put("shorts", new short[]{2});
+        values.put("ints", new int[]{3});
+        values.put("longs", new long[]{4});
         values.put("floats", new float[0]);
         values.put("doubles", new double[0]);
-        values.put("booleans", new boolean[] { true });
-        values.put("chars", new char[] { 'a' });
-        values.put("objects", new Object[] { object });
+        values.put("booleans", new boolean[]{true});
+        values.put("chars", new char[]{'a'});
+        values.put("objects", new Object[]{object});
 
         ArrayContainer result = factory.apply(values);
 
-        assertThat(result.getBytes(), is(new byte[] { 1 }));
-        assertThat(result.getShorts(), is(new short[] { 2 }));
-        assertThat(result.getInts(), is(new int[] { 3 }));
-        assertThat(result.getLongs(), is(new long[] { 4 }));
+        assertThat(result.getBytes(), is(new byte[]{1}));
+        assertThat(result.getShorts(), is(new short[]{2}));
+        assertThat(result.getInts(), is(new int[]{3}));
+        assertThat(result.getLongs(), is(new long[]{4}));
         assertThat(result.getFloats(), is(new float[0]));
         assertThat(result.getDoubles(), is(new double[0]));
-        assertThat(result.getBooleans(), is(new boolean[] { true }));
-        assertThat(result.getChars(), is(new char[] { 'a' }));
-        assertThat(result.getObjects(), is(new Object[] { object }));
+        assertThat(result.getBooleans(), is(new boolean[]{true}));
+        assertThat(result.getChars(), is(new char[]{'a'}));
+        assertThat(result.getObjects(), is(new Object[]{object}));
     }
 
-    public static interface ArrayContainer {
+    public interface ArrayContainer {
+
         byte[] getBytes();
+
         void setBytes(byte[] v);
+
         short[] getShorts();
+
         void setShorts(short[] v);
+
         int[] getInts();
+
         void setInts(int[] v);
+
         long[] getLongs();
+
         void setLongs(long[] v);
+
         float[] getFloats();
+
         void setFloats(float[] v);
+
         double[] getDoubles();
+
         void setDoubles(double[] v);
+
         boolean[] getBooleans();
+
         void setBooleans(boolean[] v);
+
         char[] getChars();
+
         void setChars(char[] v);
+
         Object[] getObjects();
+
         void setObjects(Object[] v);
     }
 
@@ -272,8 +322,10 @@ public class ClassGeneratorProviderTest {
         factory.apply(values);
     }
 
-    public static interface ExcessParametersContainer {
+    public interface ExcessParametersContainer {
+
         String getName();
+
         String setName(String name);
     }
 
@@ -307,26 +359,34 @@ public class ClassGeneratorProviderTest {
         assertThat(result.getTemperature(), is(99));
     }
 
-    public static interface Parent1AContainer {
+    public interface Parent1AContainer {
+
         String getName();
+
         void setName(String name);
     }
 
-    public static interface Parent1BContainer {
+    public interface Parent1BContainer {
+
         int getAge();
+
         int getHeatCapacity();
     }
 
-    public static interface Parent2AContainer extends Parent1AContainer {
+    public interface Parent2AContainer extends Parent1AContainer {
+
         int getAge();
+
         int getHeight();
     }
 
-    public static interface Parent2BContainer extends Parent1AContainer {
+    public interface Parent2BContainer extends Parent1AContainer {
+
         void setAge(int age);
     }
 
-    public static interface ChildContainer extends Parent2AContainer, Parent2BContainer, Parent1BContainer {
+    public interface ChildContainer extends Parent2AContainer, Parent2BContainer, Parent1BContainer {
+
         int getTemperature();
     }
 
@@ -340,8 +400,10 @@ public class ClassGeneratorProviderTest {
         assertThat(result.getName(0), is(Matchers.nullValue())); // Nonconforming method
     }
 
-    public static interface NonConformingAccessorContainer {
+    public interface NonConformingAccessorContainer {
+
         String getName(int index);
+
         void setName(String name);
     }
 
@@ -355,8 +417,10 @@ public class ClassGeneratorProviderTest {
         result.setName("Joey"); // Nonconforming method
     }
 
-    public static interface NonConformingMutatorContainer {
+    public interface NonConformingMutatorContainer {
+
         String getName();
+
         String setName(String name);
     }
 
@@ -370,8 +434,10 @@ public class ClassGeneratorProviderTest {
         result.setAddress(new ArrayList<Object>()); // Nonconforming method
     }
 
-    public static interface IncorrectMutatorContainer {
+    public interface IncorrectMutatorContainer {
+
         List<?> getAddress();
+
         void setAddress(ArrayList<?> address);
     }
 
@@ -409,10 +475,11 @@ public class ClassGeneratorProviderTest {
     }
 
     public static class AbstractImpl {
+
         private String name = "Bobby";
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -424,10 +491,14 @@ public class ClassGeneratorProviderTest {
         }
     }
 
-    public static interface AbstractImplContainer {
+    public interface AbstractImplContainer {
+
         String getName();
+
         void setName(String name);
+
         int getAge();
+
         void setAge(int age);
     }
 

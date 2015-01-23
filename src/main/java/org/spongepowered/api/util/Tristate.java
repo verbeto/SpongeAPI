@@ -91,7 +91,7 @@ public enum Tristate {
      * @return The boolean tristate representation
      */
     public boolean asBoolean() {
-        return val;
+        return this.val;
     }
 
     /**

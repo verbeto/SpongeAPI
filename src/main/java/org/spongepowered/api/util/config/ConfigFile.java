@@ -108,7 +108,7 @@ public final class ConfigFile implements Config {
      * @return The rendered HOCON
      */
     protected String render() {
-        return config.root().render(DEFAULT_OPTIONS);
+        return this.config.root().render(DEFAULT_OPTIONS);
     }
 
     /**
@@ -118,7 +118,7 @@ public final class ConfigFile implements Config {
      * @return A new instance
      */
     protected ConfigFile withConfig(Config config) {
-        return new ConfigFile(file, config);
+        return new ConfigFile(this.file, config);
     }
 
     /**
@@ -132,11 +132,11 @@ public final class ConfigFile implements Config {
      */
     private void write(String renderedString) throws IOException {
         //noinspection ResultOfMethodCallIgnored
-        file.getParentFile().mkdirs();
+        this.file.getParentFile().mkdirs();
 
         Closer closer = Closer.create();
         try {
-            BufferedWriter bw = closer.register(Files.newWriter(file, CHARSET));
+            BufferedWriter bw = closer.register(Files.newWriter(this.file, CHARSET));
             bw.write(renderedString);
         } finally {
             closer.close();
@@ -164,8 +164,8 @@ public final class ConfigFile implements Config {
     private void write(boolean onlyIfChanged) throws IOException {
         String renderedString = render();
 
-        if (onlyIfChanged && file.exists()) {
-            List<String> original = Files.readLines(file, CHARSET);
+        if (onlyIfChanged && this.file.exists()) {
+            List<String> original = Files.readLines(this.file, CHARSET);
             List<String> rendered = Arrays.asList(renderedString.split("[\r\n]"));
 
             if (!listEquals(original, rendered)) {
@@ -241,17 +241,17 @@ public final class ConfigFile implements Config {
 
     @Override
     public ConfigObject root() {
-        return config.root();
+        return this.config.root();
     }
 
     @Override
     public ConfigOrigin origin() {
-        return config.origin();
+        return this.config.origin();
     }
 
     @Override
     public ConfigFile withFallback(ConfigMergeable other) {
-        return withConfig(config.withFallback(other));
+        return withConfig(this.config.withFallback(other));
     }
 
     /**
@@ -272,216 +272,216 @@ public final class ConfigFile implements Config {
 
     @Override
     public ConfigFile resolve() {
-        return withConfig(config.resolve());
+        return withConfig(this.config.resolve());
     }
 
     @Override
     public ConfigFile resolve(ConfigResolveOptions options) {
-        return withConfig(config.resolve(options));
+        return withConfig(this.config.resolve(options));
     }
 
     @Override
     public boolean isResolved() {
-        return config.isResolved();
+        return this.config.isResolved();
     }
 
     @Override
     public ConfigFile resolveWith(Config source) {
-        return withConfig(config.resolveWith(source));
+        return withConfig(this.config.resolveWith(source));
     }
 
     @Override
     public ConfigFile resolveWith(Config source, ConfigResolveOptions options) {
-        return withConfig(config.resolveWith(source, options));
+        return withConfig(this.config.resolveWith(source, options));
     }
 
     @Override
     public void checkValid(Config reference, String... restrictToPaths) {
-        config.checkValid(reference, restrictToPaths);
+        this.config.checkValid(reference, restrictToPaths);
     }
 
     @Override
     public boolean hasPath(String path) {
-        return config.hasPath(path);
+        return this.config.hasPath(path);
     }
 
     @Override
     public boolean isEmpty() {
-        return config.isEmpty();
+        return this.config.isEmpty();
     }
 
     @Override
     public Set<Entry<String, ConfigValue>> entrySet() {
-        return config.entrySet();
+        return this.config.entrySet();
     }
 
     @Override
     public boolean getBoolean(String path) {
-        return config.getBoolean(path);
+        return this.config.getBoolean(path);
     }
 
     @Override
     public Number getNumber(String path) {
-        return config.getNumber(path);
+        return this.config.getNumber(path);
     }
 
     @Override
     public int getInt(String path) {
-        return config.getInt(path);
+        return this.config.getInt(path);
     }
 
     @Override
     public long getLong(String path) {
-        return config.getLong(path);
+        return this.config.getLong(path);
     }
 
     @Override
     public double getDouble(String path) {
-        return config.getDouble(path);
+        return this.config.getDouble(path);
     }
 
     @Override
     public String getString(String path) {
-        return config.getString(path);
+        return this.config.getString(path);
     }
 
     @Override
     public ConfigObject getObject(String path) {
-        return config.getObject(path);
+        return this.config.getObject(path);
     }
 
     @Override
     public Config getConfig(String path) {
-        return config.getConfig(path);
+        return this.config.getConfig(path);
     }
 
     @Override
     public Object getAnyRef(String path) {
-        return config.getAnyRef(path);
+        return this.config.getAnyRef(path);
     }
 
     @Override
     public ConfigValue getValue(String path) {
-        return config.getValue(path);
+        return this.config.getValue(path);
     }
 
     @Override
     public Long getBytes(String path) {
-        return config.getBytes(path);
+        return this.config.getBytes(path);
     }
 
     @Override
     @Deprecated
     public Long getMilliseconds(String path) {
-        return config.getMilliseconds(path);
+        return this.config.getMilliseconds(path);
     }
 
     @Override
     @Deprecated
     public Long getNanoseconds(String path) {
-        return config.getNanoseconds(path);
+        return this.config.getNanoseconds(path);
     }
 
     @Override
     public long getDuration(String path, TimeUnit unit) {
-        return config.getDuration(path, unit);
+        return this.config.getDuration(path, unit);
     }
 
     @Override
     public ConfigList getList(String path) {
-        return config.getList(path);
+        return this.config.getList(path);
     }
 
     @Override
     public List<Boolean> getBooleanList(String path) {
-        return config.getBooleanList(path);
+        return this.config.getBooleanList(path);
     }
 
     @Override
     public List<Number> getNumberList(String path) {
-        return config.getNumberList(path);
+        return this.config.getNumberList(path);
     }
 
     @Override
     public List<Integer> getIntList(String path) {
-        return config.getIntList(path);
+        return this.config.getIntList(path);
     }
 
     @Override
     public List<Long> getLongList(String path) {
-        return config.getLongList(path);
+        return this.config.getLongList(path);
     }
 
     @Override
     public List<Double> getDoubleList(String path) {
-        return config.getDoubleList(path);
+        return this.config.getDoubleList(path);
     }
 
     @Override
     public List<String> getStringList(String path) {
-        return config.getStringList(path);
+        return this.config.getStringList(path);
     }
 
     @Override
     public List<? extends ConfigObject> getObjectList(String path) {
-        return config.getObjectList(path);
+        return this.config.getObjectList(path);
     }
 
     @Override
     public List<? extends Config> getConfigList(String path) {
-        return config.getConfigList(path);
+        return this.config.getConfigList(path);
     }
 
     @Override
     public List<? extends Object> getAnyRefList(String path) {
-        return config.getAnyRefList(path);
+        return this.config.getAnyRefList(path);
     }
 
     @Override
     public List<Long> getBytesList(String path) {
-        return config.getBytesList(path);
+        return this.config.getBytesList(path);
     }
 
     @Override
     @Deprecated
     public List<Long> getMillisecondsList(String path) {
-        return config.getMillisecondsList(path);
+        return this.config.getMillisecondsList(path);
     }
 
     @Override
     @Deprecated
     public List<Long> getNanosecondsList(String path) {
-        return config.getNanosecondsList(path);
+        return this.config.getNanosecondsList(path);
     }
 
     @Override
     public List<Long> getDurationList(String path, TimeUnit unit) {
-        return config.getDurationList(path, unit);
+        return this.config.getDurationList(path, unit);
     }
 
     @Override
     public Config withOnlyPath(String path) {
-        return config.withOnlyPath(path);
+        return this.config.withOnlyPath(path);
     }
 
     @Override
     public Config withoutPath(String path) {
-        return config.withoutPath(path);
+        return this.config.withoutPath(path);
     }
 
     @Override
     public Config atPath(String path) {
-        return config.atPath(path);
+        return this.config.atPath(path);
     }
 
     @Override
     public Config atKey(String key) {
-        return config.atKey(key);
+        return this.config.atKey(key);
     }
 
     @Override
     public ConfigFile withValue(String path, ConfigValue value) {
-        return withConfig(config.withValue(path, value));
+        return withConfig(this.config.withValue(path, value));
     }
 
 }

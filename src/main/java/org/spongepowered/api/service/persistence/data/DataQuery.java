@@ -92,7 +92,7 @@ public final class DataQuery {
      * @return The parts of this query
      */
     public List<String> getParts() {
-        return new ImmutableList.Builder<String>().add(parts).build();
+        return new ImmutableList.Builder<String>().add(this.parts).build();
     }
 
     /**
@@ -137,13 +137,13 @@ public final class DataQuery {
     public String asString(String separator) {
         StringBuilder builder = new StringBuilder();
 
-        if (parts.length > 0) {
-            builder.append(parts[0]);
+        if (this.parts.length > 0) {
+            builder.append(this.parts[0]);
         }
 
-        for (int i = 1; i < parts.length; i++) {
+        for (int i = 1; i < this.parts.length; i++) {
             builder.append(separator);
-            builder.append(parts[i]);
+            builder.append(this.parts[i]);
         }
 
         return builder.toString();

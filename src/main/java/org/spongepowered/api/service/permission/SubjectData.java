@@ -43,7 +43,7 @@ public interface SubjectData {
      * A convenience constant for the global context combination (the empty
      * set), if you want your code to look especially fancy.
      */
-    static final Set<Context> GLOBAL_CONTEXT = Collections.emptySet();
+    Set<Context> GLOBAL_CONTEXT = Collections.emptySet();
 
     /**
      * Return all permissions associated with this data object.

@@ -46,7 +46,7 @@ public enum Axis {
      * @return True if it is along this axis
      */
     public boolean isVectorAlongAxis(final Vector3d vector) {
-        return vector.abs().normalize().sub(direction).lengthSquared() == 0;
+        return vector.abs().normalize().sub(this.direction).lengthSquared() == 0;
     }
 
     /**
@@ -58,11 +58,11 @@ public enum Axis {
     public double getComponent(final Vector3d vector3d) {
         switch (this) {
             case X :
-                return direction.getX();
+                return this.direction.getX();
             case Y :
-                return direction.getY();
+                return this.direction.getY();
             case Z :
-                return direction.getZ();
+                return this.direction.getZ();
             default :
                 throw new IllegalStateException("Not capable of handling the " + name() + " axis!");
         }
@@ -91,7 +91,7 @@ public enum Axis {
      * @return the Vector3d
      */
     public Vector3d toVector3d() {
-        return direction;
+        return this.direction;
     }
 
     /**
@@ -101,7 +101,7 @@ public enum Axis {
      * @return the Vector3d
      */
     public Vector3d toVector3dWithDirection(final AxisDirection axisDirection) {
-        return direction.mul(axisDirection.getSignum());
+        return this.direction.mul(axisDirection.getSignum());
     }
 
     /**
