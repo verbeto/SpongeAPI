@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
  *     <li>a new Thread is started which owns the job of managing new Tasks that are submitted to the
  *     AsynchronousScheduler interface.</li>
  *     <li>when new Tasks are ready to be executed, the thread in the AsynchronousScheduler calls upon
- *     the {@link ExecutorService} to submit that individual user Task.  At that point the user's Task
+ *     the {@link java.util.concurrent.ExecutorService} to submit that individual user Task.  At that point the user's Task
  *     is running in it's own thread separate from the rest of the threads in the game. Most notably, this
  *     thread is <b>not thread safe</b> with the game data.  Care must be taken by the Plugin to ensure
  *     coherency with the game data if the user Task is working with game data.</li>
@@ -54,7 +54,7 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>The interface for the AsynchronousScheduler has the feature to allow the Plugin to specify the
  * time unit the delay and/or interval of the pending Task.  In other words, if the {@link TimeUnit}
- * scale of the Task is in seconds, the scale argument to the method would be {@link TimeUnit.SECONDS}</p>
+ * scale of the Task is in seconds, the scale argument to the method would be {@link java.util.concurrent.TimeUnit}</p>
  *
  * <p>Plugins may <b>not</b> safely manipulate game data in the Tasks created by the AsynchronousScheduler.</p>
  *
@@ -64,7 +64,7 @@ import java.util.concurrent.TimeUnit;
  * by the Plugin to ensure that execution within the AsynchronousScheduler is safe</p>
  *
  * <p>In contrast the SynchronousScheduler does operate such that the Runnable targets of each Task
- * are executed in series and executed in sync with the {@link TickEvent.ServerTickEvent} on the {@link Phase}.START.</p>
+ * are executed in series and executed in sync with the TickEvent.ServerTickEvent on the Phase.START.</p>
  *
  * <p>Examples of how to setup the use of the Scheduler are included in the API descriptions in this interface.</p>
  *
@@ -276,7 +276,6 @@ public interface AsynchronousScheduler {
      * @return Optional&lt;Task&gt;&nbsp; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runRepeatingTaskAfter(Object plugin, Runnable task, TimeUnit scale, long interval, long delay);
-
     /**
      * Retrieves a scheduled or running task by its unique ID.
      *
