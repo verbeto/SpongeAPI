@@ -44,27 +44,27 @@ import java.util.concurrent.TimeUnit;
  *     <li>a new Thread is started which owns the job of managing new Tasks that are submitted to the
  *     AsynchronousScheduler interface.</li>
  *     <li>when new Tasks are ready to be executed, the thread in the AsynchronousScheduler calls upon
- *     the {@Link ExecutorService} to submit that individual user Task.  At that point the user's Task
+ *     the {@link ExecutorService} to submit that individual user Task.  At that point the user's Task
  *     is running in it's own thread separate from the rest of the threads in the game. Most notably, this
  *     thread is <b>not thread safe</b> with the game data.  Care must be taken by the Plugin to ensure
  *     coherency with the game data if the user Task is working with game data.</li>
  *     <li>Tasks created by this interface can be queried and canceled the same way as with the
- *     {@Link SynchronousScheduler} interface.  Those parts of the two interfaces are the same.</li>
+ *     {@link SynchronousScheduler} interface.  Those parts of the two interfaces are the same.</li>
  * </ul>
  *
  * <p>The interface for the AsynchronousScheduler has the feature to allow the Plugin to specify the
- * time unit the delay and/or interval of the pending Task.  In other words, if the {@Link TimeUnit}
- * scale of the Task is in seconds, the scale argument to the method would be {@Link TimeUnit.SECONDS}</p>
+ * time unit the delay and/or interval of the pending Task.  In other words, if the {@link TimeUnit}
+ * scale of the Task is in seconds, the scale argument to the method would be {@link TimeUnit.SECONDS}</p>
  *
  * <p>Plugins may <b>not</b> safely manipulate game data in the Tasks created by the AsynchronousScheduler.</p>
  *
- * <p>The difference between this SynchronousScheduler and the {@Link AsynchronousScheduler} is that
+ * <p>The difference between this SynchronousScheduler and the {@link AsynchronousScheduler} is that
  * the Tasks created by the AsynchronousScheduler are each running in their own thread.  The concurrency
  * model of the AsynchronousScheduler does not allow for safe interaction with game data.  Care must be taken
  * by the Plugin to ensure that execution within the AsynchronousScheduler is safe</p>
  *
  * <p>In contrast the SynchronousScheduler does operate such that the Runnable targets of each Task
- * are executed in series and executed in sync with the {@Link ServerTickEvent} on the {@Link Phase}.START.</p>
+ * are executed in series and executed in sync with the {@link TickEvent.ServerTickEvent} on the {@link Phase}.START.</p>
  *
  * <p>Examples of how to setup the use of the Scheduler are included in the API descriptions in this interface.</p>
  *

@@ -37,17 +37,17 @@ import java.util.UUID;
  * Server Tick Event on the Phase.START of the event.</p>
  *
  * <p>Each Task that is created and run by this Scheduler is running in the same thread as
- * the server (technically the same thread that the ServerTickEvent is fired).</p>
+ * the server (technically the same thread that the TickEvent.ServerTickEvent is fired).</p>
  *
  * <p>Plugins may safely manipulate game data in the Tasks created by the SynchronousScheduler.</p>
  *
- * <p>The difference between this SynchronousScheduler and the {@Link AsynchronousScheduler} is that
+ * <p>The difference between this SynchronousScheduler and the {@link AsynchronousScheduler} is that
  * the Tasks created by the AsynchronousScheduler are each running in their own thread.  The concurrency
  * model of the AsynchronousScheduler does not allow for safe interaction with game data.  Care must be taken
  * by the Plugin to ensure that execution within the AsynchronousScheduler is safe</p>
  *
  * <p>In contrast the SynchronousScheduler does operate such that the Runnable targets of each Task
- * are executed in series and executed in sync with the {@Link ServerTickEvent} on the {@Link Phase}.START.</p>
+ * are executed in series and executed in sync with the {@link TickEvent.ServerTickEvent} on the {@link Phase}.START.</p>
  *
  * <p>Examples of how to setup the use of the Scheduler are included in the API descriptions in this interface.</p>
  *
