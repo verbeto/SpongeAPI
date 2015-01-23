@@ -233,7 +233,7 @@ public interface AsynchronousScheduler {
      * <p>Example code to obtain plugin container argument from User code:</p>
      *
      * <p>
-     * <code>
+     * <code>D
      *     Optional&lt;PluginContainer&gt; result;
      *     result = evt.getGame().getPluginManager().getPlugin("YOUR_PLUGIN");
      *     PluginContainer pluginContainer = result.get();
