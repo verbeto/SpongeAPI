@@ -95,7 +95,7 @@ public interface AsynchronousScheduler {
      *
      * <p>
      * <code>
-     *     Optional<PluginContainer> result;
+     *     Optional&lt;PluginContainer&gt;&nbsp; result;
      *     result = evt.getGame().getPluginManager().getPlugin("YOUR_PLUGIN");
      *     PluginContainer pluginContainer = result.get();
      * </code>
@@ -103,7 +103,7 @@ public interface AsynchronousScheduler {
      *
      * @param plugin The plugin container of the Plugin that initiated the Task
      * @param task  The Runnable object that implements a run() method to execute the Task desired
-     * @return Optional<Task> Either Optional.absent() if invalid or a reference to the new Task
+     * @return Optional&lt;Task&gt;&nbsp; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runTask(Object plugin, Runnable task);
 
@@ -125,7 +125,7 @@ public interface AsynchronousScheduler {
      *
      * <p>
      * <code>
-     *     Optional<PluginContainer> result;
+     *     Optional&lt;PluginContainer&gt;&nbsp; result;
      *     result = evt.getGame().getPluginManager().getPlugin("YOUR_PLUGIN");
      *     PluginContainer pluginContainer = result.get();
      * </code>
@@ -144,7 +144,7 @@ public interface AsynchronousScheduler {
      * @param task  The Runnable object that implements a run() method to execute the Task desired
      * @param scale The time unit of the delay.
      * @param delay  The offset in scale units before running the task.
-     * @return Optional<Task> Either Optional.absent() if invalid or a reference to the new Task
+     * @return Optional&lt;Task&gt;&nbsp; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runTaskAfter(Object plugin, Runnable task, TimeUnit scale, long delay);
 
@@ -174,7 +174,7 @@ public interface AsynchronousScheduler {
      *
      * <p>
      * <code>
-     *     Optional<PluginContainer> result;
+     *     Optional&lt;PluginContainer&gt;&nbsp; result;
      *     result = evt.getGame().getPluginManager().getPlugin("YOUR_PLUGIN");
      *     PluginContainer pluginContainer = result.get();
      * </code>
@@ -202,7 +202,7 @@ public interface AsynchronousScheduler {
      * @param task  The Runnable object that implements a run() method to execute the Task desired
      * @param scale The TimeUnit scale of the interval argument.
      * @param interval The period in scale time units of the repeating Task.
-     * @return Optional<Task> Either Optional.absent() if invalid or a reference to the new Task
+     * @return Optional&lt;Task&gt;&nbsp; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runRepeatingTask(Object plugin, Runnable task, TimeUnit scale, long interval);
 
@@ -234,7 +234,7 @@ public interface AsynchronousScheduler {
      *
      * <p>
      * <code>
-     *     Optional<PluginContainer> result;
+     *     Optional&lt;PluginContainer&gt;&nbsp; result;
      *     result = evt.getGame().getPluginManager().getPlugin("YOUR_PLUGIN");
      *     PluginContainer pluginContainer = result.get();
      * </code>
@@ -273,7 +273,7 @@ public interface AsynchronousScheduler {
      * @param scale
      * @param delay  The offset in time unit scale before running the task.
      * @param interval The offset in time unit scale before running the task.
-     * @return Optional<Task> Either Optional.absent() if invalid or a reference to the new Task
+     * @return Optional&lt;Task&gt;&nbsp; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runRepeatingTaskAfter(Object plugin, Runnable task, TimeUnit scale, long interval, long delay);
 
