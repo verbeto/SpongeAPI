@@ -168,14 +168,16 @@ public interface Player extends Human, User, CommandSource, Viewer {
     /**
      * Bans the player using the vanilla banning system, with default settings.
      *
-     * Triggers {@link PlayerBannedEvent}.
+     * <p>Triggers {@link org.spongepowered.api.event.player.PlayerBannedEvent}.</p>
+     *
+     * @return The resulting {@link org.spongepowered.api.service.bans.BanInfo}
      */
     BanInfo ban();
 
     /**
      * Bans the player using the vanilla banning system, with custom settings.
      *
-     * Triggers {@link PlayerBannedEvent}.
+     * <p>Triggers {@link org.spongepowered.api.event.player.PlayerBannedEvent}.</p>
      *
      * @param duration The duration of the ban in seconds, 0 for forever.
      * @param reason The reason for the ban.
