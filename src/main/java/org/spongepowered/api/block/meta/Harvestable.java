@@ -24,7 +24,8 @@
  */
 package org.spongepowered.api.block.meta;
 
+
 public interface Harvestable {
 
-    public GrowthMediumType getMediumType();
+    public GrowthMedium getMediumType();
 }

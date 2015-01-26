@@ -22,16 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.block.type;
+package org.spongepowered.api.block.meta;
 
-public enum GrowthMediumType {
+public interface GrowthMedium {
 
-    OUTDOORSOIL,
-    INDOORSOIL,
-    FRESHWATERSTREAM,
-    FRESHWATERLAKE,
-    OCEAN,
-    PADDY,
-    GREENHOUSE,
-    PARASITIC,
+    public double getNutrientFactor();
+    public boolean isFertile();
+    public boolean adjustFertility(long factor);
 }

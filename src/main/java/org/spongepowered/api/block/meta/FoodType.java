@@ -22,13 +22,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.block.type;
+package org.spongepowered.api.block.meta;
 
-public enum FoodType {
-        CARROT,
-        APPLE,
-        RAWPORKCHOP,
-        COOKEDPORKCHOP,
-        RAWBEEFSTEAK,
-        COOKEDBEEFSTEAK,
+public interface FoodType {
+
+    public String getName();
+
+    public boolean isEdible();
+    public boolean isHarvestable();
+
 }

@@ -24,7 +24,7 @@
  */
 package org.spongepowered.api.block.type;
 
-import org.spongepowered.api.block.meta.Edible;
+import org.spongepowered.api.block.meta.FoodType;
 
 public interface Food  {
 

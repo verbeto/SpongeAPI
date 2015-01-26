@@ -26,6 +26,7 @@ package org.spongepowered.api.block.type;
 
 public interface EdibleFood extends Food {
 
-    public void eat();
+    public double getNourishment();
+    public double getToxicity();
 
 }
