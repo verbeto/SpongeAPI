@@ -38,6 +38,11 @@ import java.util.concurrent.TimeUnit;
  */
 public interface Task extends Identifiable {
 
+    public enum TaskSynchroncity {
+        SYNCHRONOUS,
+        ASYNCHRONOUS
+    }
+
     /**
      * Gets the name of this task.
      *
@@ -86,5 +91,36 @@ public interface Task extends Identifiable {
      * @return The truth if the task is synchronous
      */
     public boolean isSynchronous();
+
+    /**
+     * <p>Set the name of the Task.</p>
+     *
+     * <p>By default, the name of
+     * the task will be the form:<br>
+     * <tt>PLUGIN_ID "-" ( "A-" | "S-" ) SERIAL_ID</tt>
+     * </p>
+     *
+     * <p>If the <tt>PLUGIN_ID</tt> is not known, the string
+     * <tt>Unknown</tt> will be used.</p>
+     *
+     * <p>
+     * Examples of default Task names:<br>
+     *
+     * <tt>FooPlugin-A12"</tt><br>
+     * <tt>"BarPlugin-S4322"</tt><br>
+     * </p>
+     *
+     * <p>No two active Synchronous Tasks will have the same Sequence number.
+     * No two active Asynchronous Tasks will have the same Sequence number.</p>
+     *
+     * <p>There is no check made on the requested Task name.   It can be any String
+     * that is not null.  If the requested name is null, the name of the task is
+     * not changed.</p>
+     *
+     * @param name  The name of the task requested.
+     * @return The current name of the Task after trying to set the name of the task.
+     *
+     */
+    public String setName(String name);
 
 }

@@ -75,12 +75,15 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>Utility methods are in the interface to query the Scheduler for Tasks</p>
  *
- * @see AsynchronousScheduler#getTaskById(UUID)
- * @see AsynchronousScheduler#getScheduledTasks()
- * @see AsynchronousScheduler#getScheduledTasks(Object)
+ * @see SchedulerQuery#getTaskById(UUID)
+ * @see SchedulerQuery#getScheduledTasks()
+ * @see SchedulerQuery#getScheduledTasks(Object)
+ * @see SchedulerQuery#getUuidOfTaskByName(String)
+ * @see SchedulerQuery#getTasksByName(String)
+ *
  */
 
-public interface AsynchronousScheduler {
+public interface AsynchronousScheduler extends SchedulerQuery {
 
     /**
      * <p>Runs a Task once immediately.</p>
@@ -276,27 +279,5 @@ public interface AsynchronousScheduler {
      * @return Optional&lt;Task&gt; Either Optional.absent() if invalid or a reference to the new Task
      */
     Optional<Task> runRepeatingTaskAfter(Object plugin, Runnable task, TimeUnit scale, long interval, long delay);
-    /**
-     * Retrieves a scheduled or running task by its unique ID.
-     *
-     * @param id The id of the task
-     * @return The scheduled or running task, or {@link Optional#absent()}
-     */
-    Optional<Task> getTaskById(UUID id);
 
-    /**
-     * Returns a collection of all currently scheduled tasks.
-     *
-     * @return A collection of scheduled tasks
-     */
-    Collection<Task> getScheduledTasks();
-
-    /**
-     * Returns a collection of all currently scheduled tasks owned by a
-     * certain plugin.
-     *
-     * @param plugin The plugin to return tasks created by
-     * @return A collection of scheduled tasks
-     */
-    Collection<Task> getScheduledTasks(Object plugin);
 }

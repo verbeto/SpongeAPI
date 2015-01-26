@@ -58,13 +58,14 @@ import java.util.UUID;
  *
  * <p>Utility methods are in the interface to query the Scheduler for Tasks</p>
  *
- * @see SynchronousScheduler#getTaskById(UUID)
- * @see SynchronousScheduler#getScheduledTasks()
- * @see SynchronousScheduler#getScheduledTasks(Object)
- *
+ * @see SchedulerQuery#getTaskById(UUID)
+ * @see SchedulerQuery#getScheduledTasks()
+ * @see SchedulerQuery#getScheduledTasks(Object)
+ * @see SchedulerQuery#getUuidOfTaskByName(String)
+ * @see SchedulerQuery#getTasksByName(String)
  */
 
-public interface SynchronousScheduler {
+public interface SynchronousScheduler extends SchedulerQuery {
 
     /**
      * <p>Runs a Task once immediately.</p>
@@ -226,27 +227,4 @@ public interface SynchronousScheduler {
      */
     Optional<Task> runRepeatingTaskAfter(Object plugin, Runnable task, long interval, long delay);
 
-    /**
-     * Retrieves a scheduled or running task by its unique ID.
-     *
-     * @param id The id of the task
-     * @return The scheduled or running task, or {@link Optional#absent()}
-     */
-    Optional<Task> getTaskById(UUID id);
-
-    /**
-     * Returns a collection of all currently scheduled tasks.
-     *
-     * @return A collection of scheduled tasks
-     */
-    Collection<Task> getScheduledTasks();
-
-    /**
-     * Returns a collection of all currently scheduled tasks owned by a
-     * certain plugin.
-     *
-     * @param plugin The plugin to return tasks created by
-     * @return A collection of scheduled tasks
-     */
-    Collection<Task> getScheduledTasks(Object plugin);
 }
