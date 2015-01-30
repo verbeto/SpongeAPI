@@ -22,10 +22,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.event.player;
+package org.spongepowered.api.event.user;
 
-import org.spongepowered.api.event.entity.living.player.PlayerEvent;
+import org.spongepowered.api.util.event.Cancellable;
 
-public interface PlayerBannedEvent extends PlayerEvent {
-
+/**
+ * Occurs when a user is banned.
+ */
+public interface UserBanEvent extends UserEvent, BanEvent, Cancellable {
 }

@@ -22,52 +22,58 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package org.spongepowered.api.service.bans;
+package org.spongepowered.api.util.bans;
 
-import java.util.UUID;
+import com.google.common.base.Optional;
+import org.spongepowered.api.entity.player.User;
+import org.spongepowered.api.util.command.CommandSource;
 
-public interface BanInfo {
+import javax.xml.datatype.Duration;
+import java.util.Date;
 
-	/**
-	 * Gets the UUID of the player.
-	 *
-	 * @return The UUID of the player.
-	 */
-	UUID getUniqueIdentifier();
+/**
+ * Represents a ban made on a player.
+ */
+public interface Ban {
 
-	/**
-	 * Gets the name of the player.
-	 *
-	 * @return The name of the player.
-	 */
-	String getName();
+    /**
+     * Gets the user this ban applies to.
+     *
+     * @return The user
+     */
+	User getUser();
+
+    /**
+     * Get the reason for the ban.
+     *
+     * @return The reason specified for the ban.
+     */
+    String getReason();
 
 	/**
 	 * Gets the date of the ban.
 	 *
 	 * @return Creation date of the ban
 	 */
-	String getDateBanned();
+	Date getBanDate();
 
 	/**
-	 * Gets the player who banned the player; returns "Server" if done from console.
+	 * Gets the source that banned the user, if available.
 	 *
-	 * @return Banning player.
+	 * @return The banning source or {@link Optional#absent()}
 	 */
-	String getSource();
+	Optional<CommandSource> getSource();
 
 	/**
-	 * Gets the expiration time, formatted in long; if forever returns 0
+	 * Gets the expiration date of this ban, if available.
 	 *
-	 * @return Expiration time of the ban.
+	 * @return Expiration time of the ban or {@link Optional#absent()}
 	 */
-	long getExpiration();
+	Optional<Date> getExpirationDate();
 
-	/**
-	 * Get the reason for the ban.
-	 *
-	 * @return The reason specified for the ban.
-	 */
-	String getReason();
+    /**
+     * Pardons this ban, or removes the ban from the User.
+     */
+    void pardon();
 
 }

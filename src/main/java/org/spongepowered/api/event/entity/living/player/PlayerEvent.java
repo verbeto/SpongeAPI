@@ -30,11 +30,12 @@ import org.spongepowered.api.entity.living.Human;
 import org.spongepowered.api.entity.living.Living;
 import org.spongepowered.api.entity.player.Player;
 import org.spongepowered.api.event.entity.living.human.HumanEvent;
+import org.spongepowered.api.event.user.UserEvent;
 
 /**
  * Describes events which contain a {@link Player}.
  */
-public interface PlayerEvent extends HumanEvent {
+public interface PlayerEvent extends HumanEvent, UserEvent {
 
     /**
      * Gets the {@link Player} involved involved in this event.
@@ -60,4 +61,11 @@ public interface PlayerEvent extends HumanEvent {
      */
     @Override
     Player getEntity();
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    Player getUser();
+
 }
