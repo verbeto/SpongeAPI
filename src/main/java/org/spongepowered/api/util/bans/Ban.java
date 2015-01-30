@@ -28,7 +28,6 @@ import com.google.common.base.Optional;
 import org.spongepowered.api.entity.player.User;
 import org.spongepowered.api.util.command.CommandSource;
 
-import javax.xml.datatype.Duration;
 import java.util.Date;
 
 /**
@@ -41,7 +40,7 @@ public interface Ban {
      *
      * @return The user
      */
-	User getUser();
+    User getUser();
 
     /**
      * Get the reason for the ban.
@@ -50,26 +49,26 @@ public interface Ban {
      */
     String getReason();
 
-	/**
-	 * Gets the date of the ban.
-	 *
-	 * @return Creation date of the ban
-	 */
-	Date getBanDate();
+    /**
+     * Gets the date of the ban.
+     *
+     * @return Creation date of the ban
+     */
+    Date getBanDate();
 
-	/**
-	 * Gets the source that banned the user, if available.
-	 *
-	 * @return The banning source or {@link Optional#absent()}
-	 */
-	Optional<CommandSource> getSource();
+    /**
+     * Gets the source that banned the user, if available.
+     *
+     * @return The banning source or {@link Optional#absent()}
+     */
+    Optional<CommandSource> getSource();
 
-	/**
-	 * Gets the expiration date of this ban, if available.
-	 *
-	 * @return Expiration time of the ban or {@link Optional#absent()}
-	 */
-	Optional<Date> getExpirationDate();
+    /**
+     * Gets the expiration date of this ban, if available.
+     *
+     * @return Expiration time of the ban or {@link Optional#absent()}
+     */
+    Optional<Date> getExpirationDate();
 
     /**
      * Pardons this ban, or removes the ban from the User.
