@@ -1,7 +1,9 @@
 package org.spongepowered.api.util.bans;
 
 import org.spongepowered.api.entity.player.User;
+import org.spongepowered.api.util.command.CommandSource;
 
+import javax.annotation.Nullable;
 import java.util.Date;
 
 /**
@@ -21,5 +23,7 @@ public interface BanBuilder {
     Date setBanDate();
 
     Date setExpirationDate();
+
+    void setSource(@Nullable CommandSource source);
 
 }
