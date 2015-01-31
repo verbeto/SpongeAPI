@@ -26,7 +26,6 @@ package org.spongepowered.api.service.scheduler;
 
 import com.google.common.base.Optional;
 
-import java.util.Collection;
 import java.util.UUID;
 
 /**
@@ -74,7 +73,7 @@ public interface SynchronousScheduler extends SchedulerQuery {
      * The runTask method is used to run a single Task just once.  The Task
      * may persist for the life of the server, however the Task itself will never
      * be restarted.  It has no delay offset.  The Scheduler will not wait before
-     * running the Task.<p>
+     * running the Task.</p>
      *
      * <p>Example code to obtain plugin container argument from User code:</p>
      *

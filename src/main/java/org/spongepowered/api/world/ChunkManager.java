@@ -228,7 +228,7 @@ public interface ChunkManager {
          *
          * @return The UUID of the player that owns this ticket
          */
-        UUID getPlayerUUID();
+        UUID getPlayerUuid();
     }
 
     interface EntityLoadingTicket extends LoadingTicket {

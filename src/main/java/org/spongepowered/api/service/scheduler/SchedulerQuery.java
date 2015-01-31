@@ -25,6 +25,7 @@
 package org.spongepowered.api.service.scheduler;
 
 import com.google.common.base.Optional;
+
 import java.util.Collection;
 import java.util.UUID;
 
@@ -53,14 +54,14 @@ public interface SchedulerQuery {
      * @param id The id of the task
      * @return The scheduled or running task, or {@link com.google.common.base.Optional#absent()}
      */
-    public Optional<Task> getTaskById(UUID id);
+    Optional<Task> getTaskById(UUID id);
 
     /**
      * <p>Get the UUID of the task by name.</p>
      * @param name  The name of the task to search
      * @return  The Optional&lt;UUID&gt; result from the search by name.
      */
-    public Optional<UUID> getUuidOfTaskByName(String name);
+    Optional<UUID> getUuidOfTaskByName(String name);
 
     /**
      * <p>Get a collection of Tasks that match the Regular Expression
@@ -73,14 +74,14 @@ public interface SchedulerQuery {
      * @param pattern The regular expression pattern applied to the name of tasks.
      * @return Collection of Tasks that have names that match the pattern.
      */
-    public Collection<Task> getTasksByName(String pattern);
+    Collection<Task> getTasksByName(String pattern);
 
     /**
      * Returns a collection of all currently scheduled tasks.
      *
      * @return A collection of scheduled tasks
      */
-    public Collection<Task> getScheduledTasks();
+    Collection<Task> getScheduledTasks();
 
     /**
      * Returns a collection of all currently scheduled tasks owned by a
@@ -89,5 +90,5 @@ public interface SchedulerQuery {
      * @param plugin The plugin to return tasks created by
      * @return A collection of scheduled tasks
      */
-    public Collection<Task> getScheduledTasks(Object plugin);
+    Collection<Task> getScheduledTasks(Object plugin);
 }

@@ -64,12 +64,12 @@ public interface SubjectData {
     Map<String, Boolean> getPermissions(Set<Context> contexts);
 
     /**
-     * Set a permission to a given value. Setting value as {@link
-     * Tristate#UNDEFINED} unsets the permission. An empty set of contexts
-     * applies this permission to the global context.
+     * Set a permission to a given value. Setting value as
+     * {@link Tristate#UNDEFINED} unsets the permission. An empty set of
+     * contexts applies this permission to the global context.
      *
-     *  @param contexts The particular combination of contexts to set this
-     *                  permission in
+     * @param contexts The particular combination of contexts to set this
+     *        permission in
      * @param permission The permission to set
      * @param value The value to set this permission to
      * @return Whether the operation was successful

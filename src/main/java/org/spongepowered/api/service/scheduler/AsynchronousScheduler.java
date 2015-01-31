@@ -26,7 +26,6 @@ package org.spongepowered.api.service.scheduler;
 
 import com.google.common.base.Optional;
 
-import java.util.Collection;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -38,8 +37,8 @@ import java.util.concurrent.TimeUnit;
  * targets on specific timing parameters.  All AsynchronousScheduler tasks are free running
  * Tasks that run in their own Threads.</p>
  *
- * <p></p>The basic model of the AsynchronousScheduler is that
- * when the Game starts and the Sponge core mod is loaded then:
+ * <p>The basic model of the AsynchronousScheduler is that
+ * when the Game starts and the Sponge core mod is loaded then:</p>
  * <ul>
  *     <li>a new Thread is started which owns the job of managing new Tasks that are submitted to the
  *     AsynchronousScheduler interface.</li>
@@ -92,7 +91,7 @@ public interface AsynchronousScheduler extends SchedulerQuery {
      * The runTask method is used to run a single Task just once.  The Task
      * may persist for the life of the server, however the Task itself will never
      * be restarted.  It has no delay offset.  This Asynchronous Scheduler will not wait before
-     * running the Task.<p>
+     * running the Task.</p>
      *
      * <p>Example code to obtain plugin container argument from User code:</p>
      *

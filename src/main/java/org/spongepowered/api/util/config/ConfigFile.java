@@ -143,24 +143,6 @@ public final class ConfigFile implements Config {
         }
     }
 
-    /**
-     * Save the combined configuration (fallback configuration + loaded from
-     * disk) to disk.
-     *
-     * <p>If {@code onlyIfChanged} is true, then the configuration will
-     * only be written to disk if changes are detected. A "best effort" attempt
-     * will be made to detect whether changes have been made to the
-     * configuration, but there is no guarantee that a save will not occur if
-     * are no changes were made. However, if changes were made, then it is
-     * guaranteed that the configuration data will be written to disk.</p>
-     *
-     * <p>Any parent directories that do not yet exist will be created
-     * automatically.</p>
-     *
-     * @param onlyIfChanged True to not write if no changes are detected
-     * @throws IOException Thrown on write error
-     * @see #save(boolean) Convenience method to ignore errors
-     */
     private void write(boolean onlyIfChanged) throws IOException {
         String renderedString = render();
 
@@ -194,7 +176,6 @@ public final class ConfigFile implements Config {
      * automatically.</p>
      *
      * @param onlyIfChanged True to not write if no changes are detected
-     * @see #write(boolean) Exceptions are thrown on error
      */
     public void save(boolean onlyIfChanged) {
         try {

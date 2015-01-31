@@ -83,7 +83,7 @@ public class SimpleServiceManager implements ServiceManager {
             throw new ProviderExistsException("Provider for service " + service.getCanonicalName() +  " has already been registered!");
         }
         @SuppressWarnings("unchecked")
-        SimpleServiceReference<T> ref = (SimpleServiceReference) this.potentials.remove(service);
+        SimpleServiceReference<T> ref = (SimpleServiceReference<T>) this.potentials.remove(service);
         if (ref != null) {
             ref.registered(provider);
         }

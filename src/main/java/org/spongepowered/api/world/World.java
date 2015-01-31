@@ -102,7 +102,7 @@ public interface World extends Extent, Viewer, WeatherVolume, Contextual, Identi
      * @param uuid The unique id
      * @return An entity, if available
      */
-    Optional<Entity> getEntityFromUUID(UUID uuid);
+    Optional<Entity> getEntityFromUuid(UUID uuid);
 
     /**
      * Gets the world border for the world.
