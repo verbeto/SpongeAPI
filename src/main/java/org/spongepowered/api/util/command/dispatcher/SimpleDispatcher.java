@@ -338,7 +338,7 @@ public class SimpleDispatcher implements Dispatcher {
             Optional<CommandMapping> mapping = get(parts[0]);
 
             if (mapping.isPresent()) {
-                mapping.get().getCallable().getSuggestions(source, parts.length > 1 ? parts[1] : "");
+               suggestions.addAll(mapping.get().getCallable().getSuggestions(source, parts.length > 1 ? parts[1] : ""));
             }
         }
 
